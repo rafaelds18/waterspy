@@ -11,7 +11,7 @@ module.exports = {
         port: 25,
         auth: {
           user: 'waterspy21@gmail.com',
-          pass: 'Projeto2021'
+          pass: '*****'
         },
         tls: {
             rejectUnauthorized: false
