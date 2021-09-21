@@ -1,0 +1,28 @@
+diff a/WaterSpy/Frontend/WaterSpy/package.json b/WaterSpy/Frontend/WaterSpy/package.json	(rejected hunks)
+@@ -4,22 +4,17 @@
+   "scripts": {
+     "ng": "ng",
+     "start": "node server.js",
+-    "start-ssl": "ng serve -o  ---ssl true --ssl-key localhost-key.pem  --ssl-cert localhost.pem --proxy-config proxy.config.json",
+-    "start-pwa": "ng build --configuration production && http-server -p 4200 -c-1 dist/WaterSpy ",
+-    "start-test-pwa": "npm run start-pwa && npm start",
+-    "start-t-pwa": "ng build --configuration=production && http-server -p 4200 -c-1 dist/WaterSpy && ng serve -o --host 0.0.0.0 ---ssl true --ssl-key key.pem --ssl-cert cert.pem --proxy-config proxy.config.json ",
++    "start-dev": "ng serve -o --proxy-config proxy.config.json",
++    "start-ssl": "ng serve -o ---ssl true --ssl-key localhost-key.pem --ssl-cert localhost.pem --proxy-config proxy.config.json",
+     "postinstall": "ng build --aot --configuration=production",
+     "build": "ng build",
+     "watch": "ng build --watch --configuration development",
+     "test": "ng test",
+-    "server-pwa": "ng serve --configuration=production -o --host 0.0.0.0 ---ssl true --ssl-key localhost-key.pem  --ssl-cert localhost.pem --proxy-config proxy.config.json ",
+-    "http-server": "http-server -p 4200 -c-1 dist/WaterSpy",
+-    "conf-prod": "ng build --configuration=production ",
+-    "server": "ng serve -o --proxy-config proxy.config.json"
++    "conf-prod": "ng build --configuration=production "
+   },
+   "private": true,
+   "dependencies": {
+-    "@angular/animations": "~12.0.1",
++    "@angular/animations": "^12.0.5",
+     "@angular/cdk": "^12.0.4",
+     "@angular/common": "^12.0.1",
+     "@angular/compiler": "~12.0.1",

@@ -1,0 +1,57 @@
+<div class="p-3 p-sm-5">
+  <div class="row py-3">
+    <div class="col-12 col-md-4">
+      <label class="form-label">{{'CONSUMPTIONS.SELECT_CONTRACT' | translate}}</label>
+      <ng-select name="contracts" [items]="contracts" [(ngModel)]="contractNumberSelected" bindValue="contractNumber"
+        [searchable]="true" [searchFn]="customSearch" (change)="changeContract($event)">
+        <ng-template ng-label-tmp let-item="item">
+          {{item.description}} - {{item.contractNumber}}
+        </ng-template>
+        <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+          {{item.description}} - {{item.contractNumber}}
+        </ng-template>
+      </ng-select>
+    </div>
+    <div class="col-12 col-md-4">
+      <label class="form-label">{{'CONSUMPTIONS.SELECT_METER' | translate}}</label>
+      <ng-select name="meters" [items]="meters" [(ngModel)]="meterNumberSelected" bindValue="meterNumber"
+        bindLabel="meterNumber" (change)="changeMeter()">
+      </ng-select>
+    </div>
+  </div>
+  <h3>{{'GENERIC.WEEKLY_CONSUMPTIONS' | translate}}</h3>
+  <div class="row">
+    <div class="col-12 col-sm-6">
+      <rg-gauge-chart [canvasWidth]="canvasWidth" [needleValue]="needleValue" [centralLabel]="centralLabel"
+        [options]="options"></rg-gauge-chart>
+    </div>
+    <div class="col-12 col-sm-6 p-5 p-sm-0 pt-sm-5 fs-4">
+      {{'HOME.WEEK_AVG_CONSUMPTION' | translate}}
+    </div>
+  </div>
+  <div class="row">
+  <div class="col-12 col-sm-10" #containerGraph>
+    <h3>{{'GENERIC.AVERAGE_CONSUMPTION_YEARLY' | translate}}</h3>
+    <ngx-charts-bar-vertical 
+      [view]="[containerGraph.offsetWidth -100, 400]" [scheme]="colorScheme" 
+      [results]="items" [gradient]="gradient"
+      [xAxis]="showXAxis" [yAxis]="showYAxis" 
+      [legend]="false" [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel" 
+      [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel"
+      [legendTitle]="legendTitle"
+      [yScaleMax]="yScaleMax"
+      [yScaleMin]="yScaleMin">
+    </ngx-charts-bar-vertical>
+  </div>
+  <div class="col-12 col-sm-2">
+    <ngx-charts-legend
+    class="chart-legend"
+    [data]="chartNames"
+    [title]="legendTitle"
+    [colors]="colors"
+    >
+    </ngx-charts-legend>
+  </div>
+</div>
+</div>

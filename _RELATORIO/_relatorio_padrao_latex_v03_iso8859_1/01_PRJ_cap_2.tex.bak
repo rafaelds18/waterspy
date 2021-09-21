@@ -1,0 +1,65 @@
+%%________________________________________________________________________
+\chapter{Trabalho Relacionado}
+\label{ch:trabalhoRelacionado}
+%%________________________________________________________________________
+
+Neste capitulo será apresentado na \autoref{sec:enquadramento} o enquadramento das contagens de consumos, na \autoref{sec:sistemasSemelhantes} apresentam-se os sistemas semelhantes e na \autoref{sec:magicDraw} apresenta-se a ferramenta que foi utilizada para a modelação do sistema informático.
+
+\section{Equipamentos de Leitura}
+\label{sec:enquadramento}
+Os serviços de eletricidade, gás e água são fornecidos por empresas próprias, e são estas empresas que colocam contadores no local de consumo para que estes serviços possam ser medidos. Para este projeto iremos abordar apenas o serviço de consumo de águas e os seus contadores.
+ 
+Os contadores de água são um instrumento de medição concebido para, de forma contínua, registar e indicar o volume de água que passa através dele.
+
+Na \autoref{fig:contadorAgua} apresenta-se um contador de água em que sinalizado por um retângulo verde está o valor total de água que já foi contabilizado por este contador sendo que para efeitos de contagem apenas se utilizam os valores da zona a preto. O retângulo azul indica o ano e número de série do contador. 
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=10cm]{Imagens/contador-de-agua-janz.jpg}
+	\caption{Contador de água}
+	\label{fig:contadorAgua}
+\end{figure}
+
+Existem diversos tipos de contadores de água: contadores de água residenciais e industriais, volumétricos, monojato, multijato, húmidos e secos, mecânicos, magnéticos e inteligentes. Cada um destes tipos tem as suas próprias características sendo que diferem no tipo de serviço para que são utilizados ou diferem na forma como fazem o registo dos consumos de água. 
+
+Dentro destes tipos de contadores, podemos efetuar uma divisão em dois grupos, os de leitura manual e os inteligentes.
+Um contador inteligente (ou \textit{smart meter}) é um contador que regista a água consumida em pequenos intervalos de tempo e se este estiver em telecontagem (ou telegestão) garante um conjunto de benefícios ao cliente, tais como o envio automático de leituras ou a faturação do consumo de água sem estimativas. Em contrapartida, os contadores manuais exigem que a empresa fornecedora envie um funcionário para fazer as leituras ou faça estimativas dos valores consumidos.
+
+Os contadores inteligentes são automatizados e melhores tanto para a empresa fornecedora como para o cliente. No entanto, ainda se torna muito dispendioso para as empresas fornecedoras destes serviços removerem os contadores antigos dos seus clientes por estes inteligentes e por isso existem em menor quantidade.
+
+
+\section{Soluções Semelhantes}
+\label{sec:sistemasSemelhantes}
+Nesta secção são apresentadas algumas soluções que se relacionam com o sistema a implementar. 
+Atualmente existem algumas soluções criadas para os mais diferentes dispositivos móveis e/ou web, algumas delas tendo como objetivo comum facilitar o processo de envio leituras de água. Algumas dessas soluções são apresentadas nas subsecções seguintes.
+
+A solução ``Leitura de contadores de água, luz e gás'' \cite{Leitura_Contadores_2017}, foi desenvolvida para os principais serviços de consumos básicos (água, eletricidade e gás). Permite o controle dos consumos e efetuar leituras dos contadores através da câmara do dispositivo. Esta é uma solução que não tem interação com nenhuma empresa pois ela só têm um propósito guardar dados para o consumidor ter um histórico dos seus consumos.
+
+A solução ``EyeOnWater'' \cite{EyeOnWater_2016} foi desenvolvida para todos os consumidores de serviços de água, dentro dos códigos postais suportados pela mesma, isto é, de acordo com a documentação desta solução os códigos postais suportados pela a solução pertencem aos \texttt{E.U.A} não se sabe exatamente quais os estados ou cidades que esta solução suporta, esta solução depende assim muito da localização do contador, do consumidor, para o registo solução. Esta solução conta com as funcionalidades de entrar em contacto com o fornecedor de água, têm a possibilidade registar os consumos diários, notificar de possíveis fugas e de efetuar comparações se está a consumir água em excesso. Como a solução depende da localização para o registo, torna-se muito restrita enquanto a empresas fornecedoras de água que comunica. Esta solução não permite o envio de leituras.
+
+A solução ``myAQUA'' \cite{myAqua_2014} foi desenvolvida para todos os consumidores de serviços de água fornecidos pela Empresa Portuguesa de Águas Livres e pelas a empresas associadas a ela. Esta solução permite consultar faturas, assim como comunicar anomalias, receber alertas e comunicar leituras inserindo manualmente os valores.
+
+A solução web e aplicação para telemóvel das ``Águas do Porto'' \cite{Aguas_Porto_2016} foi desenvolvida para todos os consumidores de serviços de água da cidade do Porto. Esta solução permite ao consumidor acompanhar os seus consumos, receber alertas de possíveis fugas, notificações e avisos da empresa como dar o conhecimento da qualidade da água aos consumidores, é também possível comunicar as leituras através da web e por aplicação móvel via câmara ou inserindo manualmente os valores.
+
+A solução web e aplicação para telemóvel do ``SMAS Almada'' \cite{SMAS_Almada_2015} foi desenvolvida para todos os consumidores de serviços de água da cidade de Almada. Esta solução permite ao consumidor o envio de leituras a empresas através da página web e por aplicação móvel. A comunicação da leitura por aplicação móvel, só permite a inserção dos dados da leitura manualmente não têm uso da câmara do telemóvel.
+
+A solução ``CM-Funchal'' \cite{CM_Funchal} permite ao consumidor que reside na cidade do Funchal ou que contenha uma habitação no local a comunicação da leitura do seu contador de água.
+
+\section{MagicDraw}
+\label{sec:magicDraw}
+Neste secção apresenta-se a ferramenta utilizada para a modelação do modelo proposto.
+MagicDraw é uma ferramenta de modelagem \textit{Unified Modeling Language} (\texttt{UML}), \textit{Systems Modeling Language} (\texttt{SysML}), \textit{Business Process Model and Notation} (\texttt{BPMN}) e \textit{Unified Profile for (DoDAF)/(MODAF)} (\texttt{UPDM}) onde \textit{Department of Defense Architecture Framework} (\texttt{DoDAF}) e \textit{Ministry of Defence Architecture Framework} (\texttt{MODAF}) visual com suporte de colaboração em equipa. Projetada para analistas de negócios, analistas de software, programadores e engenheiros de controle de qualidade, esta ferramenta de desenvolvimento dinâmica e versátil facilita a análise e o projeto de sistemas e bases de dados orientados a objetos \textit{Object-oriented} (\texttt{OO}).
+
+\subsection{Linguagem SysML}
+\label{sec:sysml}
+No contexto deste projeto utilizou-se a linguagem \textit{Systems Modeling Language} (\texttt{SysML}) que foi projetada para unificar as diversas linguagens de modelagem usadas atualmente por engenheiros de sistema. O \texttt{SysML} oferece suporte às especificações, análises, projetos, verificações e validações de uma ampla gama de sistemas complexos. O \texttt{SysML} suporta uma vasta gama de diagramas tais como Casos de Uso, Requisitos e Atividade. 
+O Diagrama de Caso de Uso descreve os serviços fornecidos pelo sistema, bem como os utilizadores que utilizarão esses serviços. 
+O Diagrama de Requisitos descreve os requisitos do sistema, incluindo um \texttt{id} e um texto como propriedades. O diagrama pode ter propriedades definidas pelo utilizador e categorias, tais como \texttt{Funcional} e \texttt{Não Funcional}.
+O Diagrama de Atividade descreve as atividades que um bloco do diagrama de Casos de Uso pode conter. As atividades representam a sequência de passos da descrição de um requisito, em que mostra os passos para a sua realização e finalização.
+Para este projeto, esta linguagem foi utilizada para modelar a arquitetura lógica do sistema, os casos de utilização, os diagramas de atividades e modelo de dados Entidade Associação usando os diagramas mencionados.  
+
+\subsection{Modelo de Dados Cameo}
+\label{sec:cameo}
+O plugin Cameo Data Modeler fornece modelagem relacionada a dados para o MagicDraw. Inclui recursos de modelagem de relacionamento com entidades, base de dados e esquema \textit{Extensible Markup Language} (\texttt{XML}) \cite{Advanced_Data_Modeling}.
+Este plugin permite desenhar diagramas de relação de entidade (usando a notação do pé de galo) \cite{Crows_Foot_Notation}. Esta é uma variante completa do diagrama \textit{Entity Relationship model} (\texttt{ER model}) (incluindo conceitos estendidos de relação de entidade - como generalização), fornecendo um espectro de recursos para modelagem lógica de dados.
+Neste projeto, este modelo foi utilizado para modelar o diagrama de entidade associação da base de dados. 

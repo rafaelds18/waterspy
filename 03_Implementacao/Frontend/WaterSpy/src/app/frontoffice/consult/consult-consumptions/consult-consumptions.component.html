@@ -1,0 +1,83 @@
+<div class="p-3 p-sm-5">
+  <h2>{{'CONSUMPTIONS.CONSULT' | translate}}</h2>
+  <div class="row py-3">
+    <div class="col-12 col-md-4">
+      <label class="form-label">{{'CONSUMPTIONS.SELECT_CONTRACT' | translate}}</label>
+      <ng-select name="contracts" [items]="contracts" [(ngModel)]="contractNumberSelected" bindValue="contractNumber"
+        [searchable]="true" [searchFn]="customSearch" (change)="changeContract($event)">
+        <ng-template ng-label-tmp let-item="item">
+          {{item.description}} - {{item.contractNumber}}
+        </ng-template>
+        <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+          {{item.description}} - {{item.contractNumber}}
+        </ng-template>
+      </ng-select>
+    </div>
+    <div class="col-12 col-md-4">
+      <label class="form-label">{{'CONSUMPTIONS.SELECT_METER' | translate}}</label>
+      <ng-select name="meters" [items]="meters" [(ngModel)]="meterNumberSelected" bindValue="meterNumber"
+        bindLabel="meterNumber">
+      </ng-select>
+    </div>
+    <div class="col">
+      <button class="btn btn-principal my-4 btn-block float-end" (click)="search()">{{'GENERIC.SEARCH' |
+        translate}}</button>
+    </div>
+  </div>
+
+
+  <div [hidden]="!haveConsumptions" class="p-1">
+
+    <div class="row">
+      <h3 class="ps-5">{{'GENERIC.WEEKLY_CONSUMPTIONS' | translate}}</h3>
+      <div class="col-12 col-sm-8" *ngIf="multiValues" #containerGraphWeekLine>
+        <ngx-charts-line-chart [view]="[containerGraphWeekLine.offsetWidth -100, 400]" [scheme]="colorScheme"
+          [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxis]="xAxis" [yAxis]="yAxis"
+          [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [timeline]="timeline" [results]="consumptionWeek"
+          [gradient]="gradient" [showGridLines]="showGridLines" [yScaleMax]="yScaleMax" [yScaleMin]="yScaleMin">
+        </ngx-charts-line-chart>
+      </div>
+      <div class="col-12 col-sm-8" *ngIf="!multiValues" #containerGraphWeekBubble>
+        <ngx-charts-bubble-chart [view]="[containerGraphWeekBubble.offsetWidth -100, 400]" [scheme]="colorScheme"
+          [results]="consumptionWeek" [xAxis]="xAxis" [yAxis]="yAxis" [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel">
+        </ngx-charts-bubble-chart>
+
+      </div>
+      <div class="col-12 col-sm-4">
+        <ngx-charts-legend class="chart-legend" [data]="chartNamesWeek" [title]="legendTitle" [colors]="colorsWeek">
+        </ngx-charts-legend>
+
+      </div>
+    </div>
+    <div class="pt-5">
+      <div class="row">
+        <h3 class="ps-5">{{'GENERIC.MONTH_CONSUMPTIONS' | translate}}</h3>
+        <div class="col-12 col-lg-8 order-1" *ngIf="multiValuesMonth" #containerGraphMonthLine>
+          <ngx-charts-line-chart [view]="[containerGraphMonthLine.offsetWidth -100, 400]" [scheme]="colorScheme"
+            [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxis]="xAxis" [yAxis]="yAxis"
+            [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [timeline]="timeline" [results]="consumptionMonth"
+            [gradient]="gradient" [showGridLines]="showGridLines">
+          </ngx-charts-line-chart>
+        </div>
+        <div class="col-12 col-lg-8 order-3 order-lg-2" *ngIf="!multiValuesMonth" #containerGraphMonthBubble>
+          <ngx-charts-bubble-chart [view]="[containerGraphMonthBubble.offsetWidth -100, 400]" [scheme]="colorScheme"
+            [results]="consumptionMonth" [xAxis]="xAxis" [yAxis]="yAxis" [legendTitle]="legendTitle"
+            [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel">
+          </ngx-charts-bubble-chart>
+        </div>
+        <div class="col-12 col-lg-2 order-4 order-lg-3">
+          <ngx-charts-legend class="chart-legend" [data]="chartNamesMonth" [title]="legendTitle" [colors]="colorsMonth">
+          </ngx-charts-legend>
+        </div>
+        <div class="col-12 col-lg-2 order-2 order-lg-4">
+          <label class="form-label">{{'GENERIC.MONTH' | translate}}</label>
+          <select class="form-select" name="month" [(ngModel)]="monthOption" (ngModelChange)="getConsumptionsByMonth()">
+            <option *ngFor="let m of months" [value]="m.id">{{m.name}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

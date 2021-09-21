@@ -1,0 +1,38 @@
+<div class="p-3 p-sm-5">
+    <h2>{{'MENU.PROFILE' | translate}}</h2>
+    <form #profileForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="row pt-4">
+            <div class="col-3">
+                <label class="hoverable" for="fileInput">
+                    <img [src]="url ? url : 'assets/img/user_profile.png'" class="rounded-circle" width="150">
+                    <div class="hover-text">Choose file</div>
+                    <div class="background"></div>
+                </label>
+                <br />
+                <input name="fileImage" id="fileInput" type="file" (change)="onSelectFile($event)">
+            </div>
+        </div>
+        <div class="row pt-3">
+            <div class="col-12 col-md-4">
+                <label class="form-label">{{'GENERIC.FIRST_NAME' | translate}}</label>
+                <input type="text" name="firstName" class="form-control" [(ngModel)]="userInfo.firstName" required>
+            </div>
+            <div class="col-12 col-md-4">
+                <label class="form-label">{{'GENERIC.LAST_NAME' | translate}}</label>
+                <input type="text" name="lastName" class="form-control" [(ngModel)]="userInfo.lastName" required>
+            </div>
+        </div>
+        <div class="row pt-3">
+            <div class="col-12 col-md-8">
+                <label class="form-label">{{'GENERIC.EMAIL' | translate}}</label>
+                <input type="text" name="email" class="form-control" [(ngModel)]="userInfo.email" disabled>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <button type="submit" class="btn btn-principal my-4 btn-block w-100">{{'GENERIC.SAVE' |
+                    translate}}</button>
+            </div>
+        </div>
+    </form>
+</div>

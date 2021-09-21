@@ -1,0 +1,42 @@
+<div class="container pb-5">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="px-2 col-12 col-md-6 mx-auto">
+    <div class="row col-12">
+      <img src="../../../assets/img/logo_water_spy.svg" role="img" aria-labelledby="Logo WaterSpy">
+    </div>
+    <div class="col-12 mb-4 align-self-center">
+      <div class="col mb-2">
+        <label class="block text-gray-700 text-sm font-bold mb-2 text-left" for="email">
+          {{'GENERIC.EMAIL' | translate}}
+        </label>
+        <input type="email" formControlName="email" id="email" class="form-control"
+          placeholder="{{'GENERIC.EMAIL' | translate}}">
+      </div>
+  
+      <div class="col mb-2">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+          {{'GENERIC.PASSWORD' | translate}}
+        </label>
+        <input type="password" formControlName="password" id="password" class="form-control"
+          placeholder="{{'GENERIC.PASSWORD' | translate}}">
+      </div>
+    </div>
+  
+    <div class="col-12">
+      <div class="row col justify-content-center">
+        <div class="col-10">
+          <button class="btn btn-principal my-4 btn-block w-100" type="submit">{{'GENERIC.LOGIN' | translate}}</button>
+        </div>
+        <div class="col-12 text-center">
+            {{'LOGIN.DONT_HAVE_ACCOUNT' | translate}}
+            <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" [routerLink]="['../register']">
+              {{'REGISTER.SIGN_UP' | translate}}
+            </a>
+
+        </div>
+      </div>
+    </div>
+  
+    <app-alerts [alerts]="alerts"></app-alerts>
+  
+  </form>
+</div>

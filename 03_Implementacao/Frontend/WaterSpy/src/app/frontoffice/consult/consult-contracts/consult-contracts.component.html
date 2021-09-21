@@ -1,0 +1,22 @@
+<div class="p-3 p-sm-5">
+    <h2>{{'GENERIC.CONSULT_CONTRACTS' | translate}}</h2>
+    <table class="table" *ngIf="contracts && contracts.length > 0">
+        <thead>
+            <tr>
+                <th scope="col">{{'GENERIC.DESCRIPTION' | translate}}</th>
+                <th scope="col">{{'GENERIC.CONTRACT_NUMBER' | translate}}</th>
+                <th scope="col">{{'GENERIC.SUPPLIER' | translate}}</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let contract of contracts">
+                <th scope="row">{{contract.description}}</th>
+                <td>{{contract.contractNumber}}</td>
+                <td>{{contract.supplier?.name}}</td>
+                <td><a class="btn btn-principal align-self-end rounded-circle btn-small float-end d-flex align-items-center justify-content-center" (click)="showDetails(contract)"><i class="bi bi-search"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="contracts.length == 0">{{'GENERIC.CONTRACT_NOT_FOUND' | translate}}</div>
+</div>

@@ -1,0 +1,31 @@
+<div class="row">
+    <form [formGroup]="metersForm">
+        <ng-container formArrayName="meters">
+            <div class="row" *ngFor="let meterForm of meters?.controls; index as i" [formGroupName]="i">
+                <div class="col-12 col-lg-5">
+                    <label class="form-label">{{'GENERIC.METER_NUMBER' | translate}}</label>
+                    <input type="number" name="meterNumber" class="form-control" formControlName="meterNumber" (ngModelChange)="changeMeter()" [readonly]="!showButtons">
+                </div>
+                <div class="col-12 col-lg-5">
+                    <label class="form-label">{{'GENERIC.VALUE_INITIAL_METER' | translate}}</label>
+                    <input type="number" name="valInitMeter" class="form-control" formControlName="valInitMeter" (ngModelChange)="changeMeter()" [readonly]="!showButtons">
+                </div>
+                <div class="col-12 col-lg-2 d-flex my-1 my-lg-0" *ngIf="showButtons">
+                    <button class="btn btn-principal btn-delete align-self-end rounded-circle btn-small my-1 my-md-0" (click)="deleteMeter(i)">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            </div>
+        </ng-container>
+      
+        <div class="row justify-content-end" *ngIf="showButtons">
+            <div class="col-12 col-md-3 px-1">
+                <button class="btn btn-principal my-2 btn-block float-end d-flex align-items-center p-1 w-auto" (click)="addMeter()">
+                    <span class="mx-1">{{'GENERIC.ADD_NEW_METER' | translate}}</span>
+                    <i class="bi bi-plus-circle mx-3 icon-size-5"></i>       
+                </button>
+            </div>
+        </div>
+
+    </form>
+</div>

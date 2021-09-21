@@ -1,0 +1,82 @@
+<div class="p-3 p-sm-5">
+    <h2>{{'CONSUMPTIONS.SEND' | translate}}</h2>
+    <form #sendForm="ngForm">
+        <div class="row py-3">
+            <div class="col-12 col-md-4">
+                <label class="form-label">{{'CONSUMPTIONS.SELECT_CONTRACT' | translate}}</label>
+                <ng-select name="contracts" [items]="contracts" [(ngModel)]="contractSelected"
+                    bindValue="contractNumber" [searchable]="true" [searchFn]="customSearch"
+                    (change)="changeContract($event)">
+                    <ng-template ng-label-tmp let-item="item">
+                        {{item.description}} - {{item.contractNumber}}
+                    </ng-template>
+                    <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+                        {{item.description}} - {{item.contractNumber}}
+                    </ng-template>
+                </ng-select>
+            </div>
+            <div class="col-12 col-md-4">
+                <label class="form-label">{{'CONSUMPTIONS.SELECT_METER' | translate}}</label>
+                <ng-select name="meters" [items]="meters" [(ngModel)]="meterSelected" bindValue="id"
+                    bindLabel="meterNumber">
+                </ng-select>
+            </div>
+        </div>
+    </form>
+
+    <div class="col-md-8 pt-4">
+        <div class="input-group">
+            <div *ngIf="isMobile">
+
+                <div class="video-container" [ngClass]="isToTakePhoto ? 'd-block' : 'd-none'" *ngIf="!error">
+                    <video [ngClass]="'d-none'" #video id="video" autoplay="true"></video>
+                    <canvas #canvas id="canvas" [ngClass]="'.video'"></canvas>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-principal my-4 btn-block float-end" *ngIf="!isToTakePhoto && !isCaptured"
+                            (click)="activeCamera()">{{'GENERIC.START_CAMERA' | translate}}</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-principal my-4 btn-block float-end" *ngIf="isToTakePhoto && !isCaptured"
+                            (click)="capture()">{{'GENERIC.TAKE_PHOTO' | translate}}</button>
+                        <button class="btn btn-principal my-4 btn-block float-end" *ngIf="isToTakePhoto && isCaptured"
+                            (click)="removeCurrent()">{{'GENERIC.TAKE_ANOTHER_PHOTO' | translate}}</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-principal my-4 btn-block float-end" *ngIf="isToTakePhoto && !isCaptured"
+                            (click)="turnOffCamera()">{{'GENERIC.STOP_CAMERA' | translate}}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="custom-file">
+                <form action="/api/consumption/read" method="post" enctype="multipart/form-data">
+
+                    <div *ngIf="filePath && filePath !== ''">
+                        <img [src]="filePath" width="200">
+                    </div>
+
+                    <input (change)="fileChange($event)" type="file" class="custom-file-input" id="inputGroupFile01"
+                        aria-describedby="inputGroupFileAddon01">
+                </form>
+            </div>
+            <button class="input-group-text upload" (click)="uploadFile()" id="btnUpload">Upload</button>
+
+        </div>
+        <div class="col-md-4 pt-3">
+            <label class="form-label">{{'CONSUMPTIONS.VALUE_READ' | translate}}</label>
+            <input type="text" name="consumption" class="form-control" [(ngModel)]="consumptionRead">
+        </div>
+
+        <app-alerts [alerts]="alerts"></app-alerts>
+
+        <div class="row justify-content-end">
+            <div class="col-12 col-md-3">
+                <button type="button" class="btn btn-principal my-4 btn-block float-end"
+                    (click)="sendConsumptions()">{{'CONSUMPTIONS.SEND' | translate}}</button>
+            </div>
+        </div>
+
+    </div>
+</div>

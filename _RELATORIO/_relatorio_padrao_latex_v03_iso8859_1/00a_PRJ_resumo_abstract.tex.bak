@@ -1,0 +1,34 @@
+%%________________________________________________________________________
+%% LERCM | PROJETO
+%% 2012 / 2013
+%% Modelo para relatório
+%% v02 (inclui anexo sobre utilização sistema controlo de versões)
+%% PTS / MAI.2013
+%%________________________________________________________________________
+
+%%________________________________________________________________________
+\myPrefaceChapter{Resumo}
+%%________________________________________________________________________
+
+A água, eletricidade e gás são os serviços básicos e essenciais mais usados pelos cidadãos. Estes serviços são vigiados por contadores, isto é, dispositivos que indicam ao cidadão o valor consumido.
+
+Atualmente, existem contadores com sistema inteligente e com sistema manual. Os contadores com sistema inteligente já possibilitam a leitura e envio da contagem para o fornecedor do serviço, mas em contra partida a substituição dos contadores existentes por este tipo de contadores apresenta um custo muito elevado.
+
+Com os contadores manuais existem problemas para a empresa fornecedora, nomeadamente, o problema de como controlar os valores dos seus contadores. Uma solução para este problema será enviar periodicamente funcionários para efetuarem as leituras. No entanto, esta solução implica um custo associado para a empresa fornecedora derivada do facto de ter de enviar esses funcionários para controlar os valores dos seus contadores. A mesma acaba por fazer estimativas de consumos o que frequentemente causa erros no valor estimado dos mesmos.
+
+Este projeto tem como objetivo proporcionar uma solução simples para que o cidadão possa indicar facilmente os seus consumos sem ter de pagar mais por isso. A solução passa pela construção de um sistema informático em que o consumidor, com um dispositivo móvel, pode captar através de fotografia o valor no leitor do contador (leitura dos consumos) para assim os dados serem processados e enviados à empresa correspondente.
+
+\vspace {1 cm}
+\textbf{Palavras Chave}: \textit{Optical Character Recognition}, Câmara Fotográfica, Leituras de Consumos de Água, Dispositivo Móvel, \textit{NodeJS}, Sistema Informático.
+
+%%________________________________________________________________________
+\myPrefaceChapter{Abstract}
+%%________________________________________________________________________
+
+Water, electricity, and gas are the basic and essential services most used by citizens. These services are monitored by accountants, that is, devices that indicate to the citizen the value consumed.
+Currently, there are counters with intelligent system and manual system. The smart system counters already make it possible to read and send the count to the service provider, but in the same way the replacement of existing counters by this type of counters presents a very high cost.
+With manual counters there are problems for the supplier company, namely the problem of how to control the values of its counters. One solution to this problem will be to periodically send employees to take the readings. However, this solution entails an associated cost for the supplying company derived from having to send those employees to control the values of their accountants. It ends up making estimates of consumption, which often causes errors in their estimated value.
+This project aims to provide a simple solution so that the citizen can easily indicate their consumption without having to pay more for it. The solution involves the construction of a computer system in which the consumer, with a mobile device, can capture through photography the value in the meter reader (reading the consumptions) so that the data is processed and sent to the corresponding company.
+
+\vspace {1 cm}
+\textbf{Keywords}: Camera, Computer System, Mobile Device, \textit{NodeJS}, \textit{Optical Character Recognition}, Water Consumption Readings,.

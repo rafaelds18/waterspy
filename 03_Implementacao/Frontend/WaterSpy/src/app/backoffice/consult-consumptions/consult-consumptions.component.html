@@ -1,0 +1,49 @@
+<div class="p-3 p-sm-5">
+    <h2>{{'CONSUMPTIONS.CONSULT' | translate}}</h2>
+
+    <div class="row py-3">
+        <div class="col-12 col-md-4">
+            <label class="form-label">{{'CONSUMPTIONS.SELECT_CONTRACT' | translate}}</label>
+            <ng-select name="contracts" [items]="contracts" [(ngModel)]="contractNumberSelected" bindValue="contractNumber"
+                [searchable]="true" [searchFn]="customSearch" (change)="changeContract($event)">
+                <ng-template ng-label-tmp let-item="item">
+                    {{item.description}} - {{item.contractNumber}}
+                </ng-template>
+                <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+                    {{item.description}} - {{item.contractNumber}}
+                </ng-template>
+            </ng-select>
+        </div>
+        <div class="col-12 col-md-4">
+            <label class="form-label">{{'CONSUMPTIONS.SELECT_METER' | translate}}</label>
+            <ng-select name="meters" [items]="meters" [(ngModel)]="meterNumberSelected" bindValue="meterNumber" bindLabel="meterNumber">
+            </ng-select>
+        </div>
+        <div class="col">
+            <button class="btn btn-principal my-4 btn-block float-end" (click)="search()">{{'GENERIC.SEARCH' | translate}}</button>
+        </div>
+
+    </div>
+
+    <table class="table" *ngIf="consumptions && consumptions.length > 0">
+        <thead>
+            <tr>
+                <th scope="col">{{'GENERIC.CONTRACT_NUMBER' | translate}}</th>
+                <th scope="col">{{'GENERIC.METER_NUMBER' | translate}}</th>
+                <th scope="col">{{'CONSUMPTIONS.VALUE_READ' | translate}}</th>
+                <th scope="col">{{'GENERIC.DATE_SEND' | translate}}</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let consumption of consumptions">
+                <td>{{consumption.contractNumber}}</td>
+                <td>{{consumption.meterNumber}}</td>
+                <td>{{consumption.value}} m³</td>
+                <td>{{consumption.date | date}}</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="!consumptions || (consumptions && consumptions.length == 0)">{{'GENERIC.CONTRACT_NOT_FOUND' | translate}}</div>
+</div>

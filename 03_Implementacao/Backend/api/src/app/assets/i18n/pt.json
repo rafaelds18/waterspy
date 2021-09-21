@@ -1,0 +1,17 @@
+{
+    "REGISTER": {
+        "EMAIL":{
+            "SUBJECT": "Registo na Aplicação",
+            "HTML": "<h3>Bem vindo ao WaterSpy.</h3><p>Para concluir o seu registo clique no seguinte link "
+        }
+    },
+    "NOTIFICATIONS": {
+        "EMAIL":{
+            "SUBJECT": "Notificação",
+            "TEXT":{
+                "RECEIVE_CONSUMPTION": "A sua leitura foi recebida com sucesso!",
+                "SEND_BILLING": "A sua conta deste mês foi de "
+            }
+        }
+    }
+}

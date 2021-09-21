@@ -1,0 +1,15 @@
+<div class="p-sm-5">
+    <h2>{{'EMAIL_CONFIRM.TITLE' | translate}}</h2>
+
+    <div class="pt-3">
+        <div *ngIf="successAlert">
+            <div>{{successAlert}}</div>
+        </div>
+    </div>
+
+    <div class="pt-2">
+        <div>
+            <a [routerLink]="['/account/login']">{{'GENERIC.BACK_TO_LOGIN' | translate}}</a>
+        </div>
+    </div>
+</div>

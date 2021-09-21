@@ -1,0 +1,131 @@
+{
+    "GENERIC": {
+        "ADDRESS": "Morada",
+        "ADD_NEW_METER": "Adicionar",
+        "ADD_NEW_CONTRACT": "Adicionar Contrato",
+        "AVERAGE_CONSUMPTION_YEARLY": "Consumo Médio Anual",
+        "BACK": "Voltar",
+        "BACK_TO_LOGIN": "Voltar ao login",
+        "CANCEL": "Cancelar",
+        "CHANGES_SUCCESS": "Alterações efetuadas com sucesso",
+        "CONFIRM": "Confirmar",
+        "CONFIRM_DELETE_METER": "Tem a certeza que quer apagar o contador ?",
+        "CONFIRM_DELETE_SUPPLIER": "Tem a certeza que quer apagar o fornecedor ?",
+        "CONSULT_CONTRACTS": "Lista de Contratos",
+        "CONTRACT": "Contrato",
+        "CONTRACT_NOT_FOUND": "Não tem contratos associados",
+        "CONTRACT_NUMBER": "Número de Contrato",
+        "DATE_SEND": "Data de Envio",
+        "CLOSE": "Fechar",
+        "EDIT": "Editar",
+        "EMAIL": "Email",
+        "DESCRIPTION": "Descrição",
+        "FIRST_NAME": "Primeiro nome",
+        "LAST_NAME": "Último nome",
+        "LOGIN": "Login",
+        "METERS":"Contadores",
+        "METER_NUMBER": "Número do Contador",
+        "MONTH": "Mês",
+        "MONTH_CONSUMPTIONS": "Consumos do Mês",
+        "PASSWORD": "Palavra-passe",
+        "REGISTER": "Registar",
+        "REGISTER_CONTRACTS": "Registar Contratos",
+        "REGISTER_METERS": "Registar Contadores",
+        "REPEAT_PASSWORD": "Repetir palavra-passe",
+        "SAVE": "Guardar",
+        "SEARCH": "Pesquisar",
+        "SUPPLIER": "Fornecedor",
+        "SUCCESS_SEND_EMAIL": "Email enviado com sucesso",
+        "USAGE_TYPE": "Tipo de Uso",
+        "USERNAME": "Nome de Conta",
+        "WEEKLY_CONSUMPTIONS": "Consumos Semanais",
+        "START_CAMERA": "Iniciar Câmera",
+        "STOP_CAMERA": "Desligar Câmera",
+        "TAKE_PHOTO": "Tirar Fotografia",
+        "TAKE_ANOTHER_PHOTO": "Tirar outra fotografia",
+        "VALUE_INITIAL_METER": "Valor Inicial do Leitor do Contador"
+    },
+    "HOME":{
+        "WEEK_AVG_CONSUMPTION" : "Média dos valores de consumo semanais"
+    },
+    "CONTRACTS": {
+        "DETAILS": "Detalhes do Contrato"
+    },
+    "CONSUMPTIONS": {
+        "CONSULT": "Consultar Consumos",
+        "SELECT_CONTRACT": "Selecione o contrato",
+        "SELECT_METER": "Selecione o contador",
+        "SEND": "Envio de Consumos",
+        "VALUE_READ": "Valor da leitura"
+    },
+    "ERROR_CODES": {
+        "CONSUMPTION_ERROR_READ": "Erro a processar o valor do consumo",
+        "EMAIL_NOT_CONFIRMED": "O email do utilizador ainda não foi confirmado",
+        "INVALID_PASSWORD": "Password Inválida",
+        "USER_EXISTS": "O utilizador já existe",
+        "USER_NOT_FOUND": "O utilizador não foi encontrado"
+    },
+    "EMAIL_CONFIRM": {
+        "TITLE": "Confirmação de Email",
+        "SUCCESS": "O email foi confirmado com sucesso!"
+    },
+    "ENUMS": {
+        "NOTIFICATION_TYPES": {
+            "READING_CONSUMPTION": "Leitura de Consumo",
+            "SENDING_WARNING": "Envio de Aviso",
+            "SENDING_INFO": "Envio de Informação"
+        }
+    },
+    "LOGIN": {
+        "FORGOT_PASSWORD": "Esqueceu-se da palavra-passe?",
+        "DONT_HAVE_ACCOUNT": "Não tem uma conta?"
+    },
+    "MENU": {
+        "CONSULT": "Consultar",
+        "CONSUMPTIONS": "Consumos",
+        "CONTRACTS": "Contratos",
+        "SUPPLIERS": "Fornecedores",
+        "METERS": "Contadores",
+        "NOTIFICATIONS": "Notificações",
+        "PROFILE": "Perfil",
+        "REGISTER": "Registar",
+        "SEND_CONSUMPTIONS": "Enviar Consumos",
+        "SEND_NOTIFICATIONS": "Enviar Notificações",
+        "USERS": "Utilizadores"
+    },
+    "NOTIFICATION": {
+        "CONTENT": "Conteúdo da Notificação",
+        "DETAILS": "Detalhes da Notificação",
+        "TITLE": "Notificações",
+        "TYPE":"Tipo de Notificação",
+        "SUBJECT": "Assunto",
+        "SEND": "Envio de Notificação",
+        "MESSAGE": "Mensagem"
+    },
+    "PROFILE": {
+        "DOC_ID": "Documento de identificação",
+        "NIF": "NIF"
+    },
+    "REGISTER":{
+        "SIGN_UP": "Registe-se"
+    },
+    "SUPPLIER":{
+        "CONSULT": "Lista de Fornecedores",
+        "NAME": "Nome do Fornecedor",
+        "NOT_FOUND": "Não existem fornecedores",
+        "TIN": "NIF"
+    },
+    "USER":{
+        "CONSULT": "Lista de Utilizadores",
+        "FIRST_NAME": "Primeiro Nome",
+        "LAST_NAME": "Último nome",
+        "EMAIL": "Email",
+        "EMAIL_CONFIRMED": "Email Confirmado",
+        "NOT_FOUND": "Não existem utilizadores",
+        "ROLES": "Permissões"
+    },
+    "ROLES": {
+        "ADMIN": "Administrador",
+        "CONSUMER": "Consumidor"
+    }
+}

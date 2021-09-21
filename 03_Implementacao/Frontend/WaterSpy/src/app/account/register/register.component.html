@@ -1,0 +1,45 @@
+<div class="container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="text-center px-2 col-12 col-md-6 mx-auto">
+
+        <p class="h3 mb-4 color-blue">{{'GENERIC.REGISTER' | translate}}</p>
+      
+        <div class="form-row mb-4">
+            <div class="col mb-4">
+                <div class="mb-2 text-start fw-bold">{{'GENERIC.FIRST_NAME' | translate}}</div>
+                <input type="text" formControlName="firstName" id="firstName" class="form-control" placeholder="{{'GENERIC.FIRST_NAME' | translate}}">
+            </div>
+    
+            <div class="col mb-4">
+                <div class="mb-2 text-start fw-bold">{{'GENERIC.LAST_NAME' | translate}}</div>
+                <input type="text" formControlName="lastName" id="lastName" class="form-control" placeholder="{{'GENERIC.LAST_NAME' | translate}}">
+            </div>
+    
+            <div class="col mb-4">
+                <div class="mb-2 text-start fw-bold">{{'GENERIC.EMAIL' | translate}}</div>
+                <input type="email" formControlName="email" id="email" class="form-control" placeholder="{{'GENERIC.EMAIL' | translate}}">
+            </div>
+            
+            <div class="col mb-4">
+                <div class="mb-2 text-start fw-bold">{{'GENERIC.PASSWORD' | translate}}</div>
+                <input type="password" formControlName="password" id="password" class="form-control" placeholder="{{'GENERIC.PASSWORD' | translate}}">
+            </div>
+            
+            <div class="col mb-4">
+                <div class="mb-2 text-start fw-bold">{{'GENERIC.REPEAT_PASSWORD' | translate}}</div>
+                <input type="password" formControlName="repeatPassword" id="repeatPassword" class="form-control" placeholder="{{'GENERIC.REPEAT_PASSWORD' | translate}}">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-6">
+                <button class="btn btn-inv-principal my-4 btn-block w-100" type="button" (click)="back()">{{'GENERIC.BACK' | translate}}</button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-principal my-4 btn-block w-100" type="submit">{{'GENERIC.REGISTER' | translate}}</button>
+            </div>
+        </div>
+      
+        <app-alerts [alerts]="alerts"></app-alerts>
+      
+      </form>
+</div>

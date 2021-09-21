@@ -1,0 +1,15 @@
+{
+    "GENERIC": {
+        "LOGIN": "Login",
+        "REGISTER": "Register",
+        "USERNAME": "Username",
+        "PASSWORD": "Password"
+    },
+    "LOGIN": {
+        "FORGOT_PASSWORD": "Forgot Password?",
+        "DONT_HAVE_ACCOUNT":"Don't have an account?"
+    },
+    "REGISTER":{
+        "SIGN_UP": "Sign up"
+    }
+}

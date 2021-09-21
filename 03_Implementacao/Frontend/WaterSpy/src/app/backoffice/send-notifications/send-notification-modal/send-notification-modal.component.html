@@ -1,0 +1,27 @@
+<!-- Modal -->
+<div class="modal-header">
+    <h4 class="modal-title fw-bold">{{'NOTIFICATION.SEND' | translate}}</h4>
+    <button type="button" class="btn btn-danger close" aria-label="Close" (click)="activeModal.dismiss()">
+        <i class="bi bi-x-lg"></i>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="row col-12">
+        <label class="form-label">{{'NOTIFICATION.SUBJECT' | translate}}</label>
+    </div>
+    <div class="row col-12 pb-3 px-3">
+        <input type="text" [(ngModel)]="subject">
+    </div>
+
+    <div class="row col-12">
+        <label class="form-label">{{'NOTIFICATION.MESSAGE' | translate}}</label>
+    </div>
+    <div class="row col-12 pb-3 px-3">
+        <textarea name="message" rows="6" cols="20" [(ngModel)]="message">
+        </textarea>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-send" (click)="send()">{{'GENERIC.CONFIRM' | translate}}</button>
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close()">{{'GENERIC.CLOSE' | translate}}</button>
+</div>

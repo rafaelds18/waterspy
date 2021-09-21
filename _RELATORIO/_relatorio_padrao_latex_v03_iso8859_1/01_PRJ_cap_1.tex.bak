@@ -1,0 +1,40 @@
+%%________________________________________________________________________
+\chapter{Introdução}
+\label{ch:introducao}
+%%________________________________________________________________________
+
+Nos dias de hoje, os serviços básicos e essenciais mais usados pelos cidadãos são a eletricidade, gás e água.
+As empresas fornecedoras destes serviços necessitam, para faturação, de efetuar leituras periódicas relativas aos consumos efetuados. Para a medição da água consumida é utilizado um dispositivo de medição volumétrica da água que passa numa parte da rede de abastecimento, que designamos por contador. No caso dos contadores manuais, essas leituras implicam a deslocação de um funcionário da empresa fornecedora ao local onde se encontra o contador algo que é demorado e dispendioso. Esta é uma das razões pela qual as empresas optam por calcular estes valores com base em estimativas, e efetuam as leituras reais com uma menor periodicidade. 
+
+Este valor tem um erro relativamente ao valor real pelo que se tem de calcular o consumo médio como mostra a \autoref{eq:consumoMedio} e a partir daí fazer uma estimativa consoante o número de dias como mostra a \autoref{eq:consumoEstimado}, pelo que é favorável desenvolver um sistema que possa efetuar as leituras remotamente.
+
+\begin{equation}
+\label{eq:consumoMedio}
+Consumo\: M\acute{e}dio\: Di\acute{a}rio = \dfrac{Consumo\:entre\:2\: leituras}{nº\: dias} 
+\end{equation} 
+
+
+\begin{equation}
+\label{eq:consumoEstimado}
+Consumo\:Estimado = Consumo\:M\acute{e}dio\:Di\acute{a}rio \times nº\: dias\:a\:estimar 
+\end{equation} 
+
+%Consumo Estimado = Consumo Médio Diário × nº dias a estimar
+Atualmente já existem contadores com sistemas inteligentes que permitem o envio dos consumos à empresa fornecedora, no entanto a instalação deste tipo de contadores ainda é bastante dispendiosa para a empresa fornecedora do serviço.
+
+\section{Objetivos}
+Com o crescimento tecnológico a maior parte dos serviços que anteriormente teriam de ser feitos presencialmente podem ser facilitados pelos equipamentos tecnológicos. O mesmo pode acontecer com o envio de leituras da contagem de água sem ter de haver uma substituição dos contadores, não acarretando assim mais custos para as empresas fornecedoras. 
+
+Com este projeto pretendemos criar uma solução tecnológica para todos os consumidores, para que facilmente possam enviar as suas leituras para as empresas fornecedoras do serviço.
+
+A solução passa por melhorar a interatividade homem-máquina com a criação de uma interface gráfica simpática para o utilizador (\textit{User-Friendly}), simples, intuitiva e de confiança.
+O utilizador através do uso de um dispositivo móvel, equipado com uma câmara fotográfica, ira, captar os valores do seu contador que por sua vez serão apresentados no ecrã e após confirmar os dados, será possível enviar a leitura para a empresa fornecedora.
+
+Para suportar esta solução vamos criar um sistema informático que vai efetuar o reconhecimento dos caracteres presentes nas fotografias tiradas pelo consumidor recorrendo ao processo de \texttt{OCR} (\textit{Optical Character Recognition} ou Reconhecimento ótico de caracteres) e após a confirmação pelo consumidor, irá enviar os valores para a empresa fornecedora.
+
+\section{Motivação}
+A motivação para a realização deste projeto passou pela inovação, interação homem-máquina e na ajuda aos consumidores de serviços essenciais de modo a que consigam facilmente enviar as leituras dos seus consumos para as empresas sem passarem por um processo demoroso do envio das mesmas, notificar os consumidores de eventos como possíveis fugas e excesso de consumo. 
+Para tal, o utilizador passa a usufruir de um sistema informático capaz de operar em qualquer dispositivo, sendo assim capaz de realizar leituras através da câmara, consultar os seus consumos e enviar os mesmos para as empresas fornecedoras obtendo assim um serviço barato, simples e inovador com a interação do mundo tecnológico e real, possibilitando também a redução no consumo e poupando a escassez de recursos como a água.
+
+\section{Organização do Relatório}
+Este relatório está organizado em seis capítulos. Neste capítulo, é elaborada a introdução global pormenorizando o objetivo, a motivação e a organização deste projeto. No \autoref{ch:trabalhoRelacionado} (\nameref{ch:trabalhoRelacionado}), é descrito o trabalho relacionado, enunciando aspetos gerais associados à leitura de contadores, enumerando os sistemas semelhantes que mais se relacionam com este projeto. No \autoref{ch:modeloProposto} (\nameref{ch:modeloProposto}), especifica-se a arquitetura proposta para conceber o sistema detalhando os seus requisitos e casos de utilização. No \autoref{ch:implementacaoDoModelo} (\nameref{ch:implementacaoDoModelo}) é descrita a implementação do modelo definido no \autoref{ch:modeloProposto} (\nameref{ch:modeloProposto}). No \autoref{ch:validacaoTestes} (\nameref{ch:validacaoTestes}) especifica-se as validações e testes feitos ao sistema implementado. No \autoref{ch:conclusoesTrabalhoFuturo} (\nameref{ch:conclusoesTrabalhoFuturo}) e último, apresentadas as conclusões que resultaram da execução do trabalho e são indicadas as perspetivas de trabalho futuras. O projeto \texttt{WaterSpy} encontra-se no repositorio \url{https://github.com/rafaelds18/waterspy} \cite{WaterSpy}.

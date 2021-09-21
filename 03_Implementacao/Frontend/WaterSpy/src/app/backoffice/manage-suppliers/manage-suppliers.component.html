@@ -1,0 +1,57 @@
+<div class="p-3 p-sm-5">
+    <h2>{{'SUPPLIER.CONSULT' | translate}}</h2>
+    
+    <form [formGroup]="suppliersForm">
+        <table class="table" *ngIf="suppliers && suppliers.length > 0">
+            <thead>
+                <tr>
+                    <th scope="col">{{'SUPPLIER.NAME' | translate}}</th>
+                    <th scope="col">{{'SUPPLIER.TIN' | translate}}</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container formArrayName="suppliers" *ngFor="let group of suppliers.controls ; let i=index">
+                    <tr *ngIf="group.get('isEditable')?.value" [formGroupName]="i">
+                        <td>
+                            <input type="text" formControlName="name">
+                        </td>
+                        <td>
+                            <input type="text" formControlName="tin">
+                        </td>
+                        <td class="d-flex justify-content-end">
+                            <button class="btn btn-principal align-self-end rounded-circle btn-small me-2" (click)="doneRow(group)">
+                                <i class="bi bi-check"></i>
+                            </button>
+                            <button class="btn btn-principal btn-delete align-self-end rounded-circle btn-small" (click)="cancelRow(group, i)">
+                                <i class="bi bi-x"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr *ngIf="!group.get('isEditable')?.value" >
+                        <td>
+                          {{group.get('name')?.value}}
+                        </td>
+                        <td>
+                          {{group.get('tin')?.value}}
+                        </td>
+                        <td class="d-flex justify-content-end"> 
+                            <button class="btn btn-principal align-self-end rounded-circle btn-small me-2" (click)="editRow(group)">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                            <button class="btn btn-principal btn-delete align-self-end rounded-circle btn-small" (click)="deleteConfirmation(group, i)">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </td>
+                      </tr>
+                </ng-container>
+            
+            </tbody>
+        </table>
+    </form>
+    
+    <button class="btn btn-principal align-self-end rounded-circle btn-small me-2" (click)="addRow()">
+        <i class="bi bi-plus"></i>
+    </button>
+    <div *ngIf="suppliers.length == 0">{{'SUPPLIER.NOT_FOUND' | translate}}</div>
+</div>

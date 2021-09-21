@@ -1,0 +1,40 @@
+<div class="p-sm-5">
+    <h2>{{'USER.CONSULT' | translate}}</h2>
+
+    <form [formGroup]="usersForm">
+        <table class="table" *ngIf="users && users.length > 0">
+            <thead>
+                <tr>
+                    <th scope="col">{{'USER.FIRST_NAME' | translate}}</th>
+                    <th scope="col">{{'USER.LAST_NAME' | translate}}</th>
+                    <th scope="col">{{'USER.EMAIL' | translate}}</th>
+                    <th scope="col">{{'USER.EMAIL_CONFIRMED' | translate}}</th>
+                    <th scope="col">{{'USER.ROLES' | translate}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container formArrayName="users" *ngFor="let group of users.controls ; let i=index">
+                    <tr>
+                        <td>
+                            {{group.get('firstName')?.value}}
+                        </td>
+                        <td>
+                            {{group.get('lastName')?.value}}
+                        </td>
+                        <td>
+                            {{group.get('email')?.value}}
+                        </td>
+                        <td>
+                            {{group.get('emailConfirmed')?.value ? 'Sim' : 'Não'}}
+                        </td>
+                        <td>
+                            {{group.get('roles')?.value}}
+                        </td>
+                    </tr>
+                </ng-container>
+
+            </tbody>
+        </table>
+    </form>
+    <div *ngIf="users.length == 0">{{'USER.NOT_FOUND' | translate}}</div>
+</div>

@@ -1,0 +1,11 @@
+@import "../../../../styles/variables.scss";
+
+i, button:hover > i {
+    color: white;
+}
+
+.btn-send {
+    background-color: $color-blue;
+    color: white;
+}
+

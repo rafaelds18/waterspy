@@ -1,0 +1,38 @@
+<div class="p-3 p-sm-5">
+    <h2>{{'GENERIC.REGISTER_CONTRACTS' | translate}}</h2>
+    <form #contractsForm="ngForm" (ngSubmit)="onSubmit()">
+
+        <fieldset>
+            <legend>{{'GENERIC.CONTRACT' | translate}}</legend>
+            <div class="row p-3">
+                <div class="col-12 col-md-4">
+                    <label class="form-label">{{'GENERIC.DESCRIPTION' | translate}}</label>
+                    <input type="text" name="description" class="form-control" [(ngModel)]="description" required>
+                </div>   
+                
+                <div class="col-12 col-md-4">
+                    <label class="form-label">{{'GENERIC.CONTRACT_NUMBER' | translate}}</label>
+                    <input type="number" name="contractNumber" class="form-control" [(ngModel)]="contractNumber" required>
+                </div>
+                     
+                <div class="col-12 col-md-4">
+                    <label class="form-label">{{'GENERIC.SUPPLIER' | translate}}</label>
+                    <select class="form-select" name="supplier" [(ngModel)]="supplierId" required>
+                        <option selected></option>
+                        <option *ngFor="let supplierOp of suppliers" [value]="supplierOp.id">{{supplierOp.name}}</option>
+                    </select>
+                </div>
+        
+            </div>
+            <fieldset class="m-3">
+                <legend>{{'GENERIC.METERS' | translate}}</legend>
+                <app-meters #meters [showButtons]="true" (metersChanged)="setMeters($event)"></app-meters>
+            </fieldset>
+        </fieldset>
+        <div class="row justify-content-end">
+            <div class="col-12 col-md-3">
+                <button type="submit" class="btn btn-principal my-4 btn-block float-end">{{'GENERIC.ADD_NEW_CONTRACT' | translate}}</button>
+            </div>
+        </div>
+    </form>
+</div>

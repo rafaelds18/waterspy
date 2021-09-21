@@ -1,0 +1,16 @@
+<!-- Modal -->
+<div class="modal-header">
+    <h4 class="modal-title">{{'CONTRACTS.DETAILS' | translate}}</h4>
+    <button type="button" class="btn btn-danger close" aria-label="Close" (click)="activeModal.dismiss()">
+        <i class="bi bi-x-lg"></i>
+    </button>
+</div>
+<div class="modal-body">
+    <h5>{{'GENERIC.METERS' | translate}}</h5>
+    <app-meters *ngIf="metersList" [showButtons]="showButtons" [metersReceived]="metersList" (metersChanged)="setMeters($event)"></app-meters>
+</div>
+<div class="modal-footer">
+    <button *ngIf="!isEdit" type="button" class="btn btn-outline-dark" (click)="edit()">{{'GENERIC.EDIT' | translate}}</button>
+    <button *ngIf="isEdit" type="button" class="btn btn-outline-dark" (click)="save()">{{'GENERIC.SAVE' | translate}}</button>
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close()">{{'GENERIC.CLOSE' | translate}}</button>
+</div>

@@ -1,0 +1,109 @@
+@import "styles/buttons.scss";
+@import "styles/variables.scss";
+@import '~bootstrap-icons/font/bootstrap-icons';
+@import '~ngx-toastr/toastr.css';
+@import 'styles/icons.scss';
+@import '~@ng-select/ng-select/themes/default.theme.css';
+
+@font-face {
+    font-family: GilroyFont;
+    src: url("/assets/fonts/Gilroy-Light.otf") format("truetype");
+}
+
+@font-face {
+    font-family: GilroyFontBold;
+    src: url("/assets/fonts/Gilroy-ExtraBold.otf") format("truetype");
+}
+
+* {
+    font-family: GilroyFont;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.ng-invalid.ng-touched  {
+    border: 1px solid red;
+}
+
+form.ng-invalid.ng-touched {
+    border: none;
+}
+
+.color-blue{
+    color: $color-blue;
+}
+
+.bg-blue {
+    background-color: $color-blue;
+}
+
+.bi {
+    color: white;
+    font-size: 1rem;
+}
+
+#toast-container > div {
+    opacity: 1;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+fieldset{
+    margin: 1.5em !important;
+    border-width: 2px !important;
+    border-style: groove !important;
+    border-color: threedface !important;
+    border-image: initial !important;
+    padding: 0.5em 1em !important;
+}
+
+legend{
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    width: auto;
+    padding: 0 0.5em;
+    border-bottom: none;
+
+    float: none;
+    display: block;
+    padding-inline-start: 2px;
+    padding-inline-end: 2px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+}
+
+@media screen and (max-width: 650px) {
+    .chart-legend{
+        margin: 0 50%;
+        display: block !important;
+        & >div{
+            width: 120px !important;
+        }
+        .legend-title{
+            width: 85px;
+        }
+    }
+    
+}
+@media screen and (min-width: 650px) {
+    .chart-legend{
+        & >div{
+            width: 120px !important;
+        }
+        .legend-title{
+            width: 85px;
+        }
+    }
+    div.gauge-chart{
+        margin: auto;
+    }    
+}
+.video {
+    max-height: 200px;
+  }

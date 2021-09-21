@@ -1,0 +1,13 @@
+<!-- Modal -->
+<div class="modal-header">
+    <h4 class="modal-title fw-bold">{{'NOTIFICATION.DETAILS' | translate}}</h4>
+    <button type="button" class="btn btn-danger close" aria-label="Close" (click)="activeModal.dismiss()">
+        <i class="bi bi-x-lg"></i>
+    </button>
+</div>
+<div class="modal-body">
+    <div>{{notification.content}}</div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-principal my-2 btn-block float-end" (click)="activeModal.close()">{{'GENERIC.CLOSE' | translate}}</button>
+</div>
