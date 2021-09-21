@@ -1,0 +1,102 @@
+\babel@toc {portuguese}{}
+\contentsline {chapter}{Resumo}{i}{chapter*.4}%
+\contentsline {chapter}{Abstract}{iii}{chapter*.5}%
+\contentsline {chapter}{\'Indice de Conte\'udos}{v}{chapter*.6}%
+\contentsline {chapter}{\'Indice de Figuras}{vii}{chapter*.7}%
+\contentsline {chapter}{\'Indice de Tabelas}{ix}{chapter*.8}%
+\contentsline {chapter}{Lista de Acr\'onimos}{xi}{chapter*.9}%
+\contentsline {chapter}{\numberline {1}Introdu\c c\~ao}{1}{chapter.1}%
+\hypertarget {chap-1}{}
+\hypertarget {sec-1.1}{}
+\contentsline {section}{\numberline {1.1}Objetivos}{2}{section.1.1}%
+\hypertarget {sec-1.2}{}
+\contentsline {section}{\numberline {1.2}Motiva\c c\~ao}{2}{section.1.2}%
+\hypertarget {sec-1.3}{}
+\contentsline {section}{\numberline {1.3}Organiza\c c\~ao do Relat\'orio}{3}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Trabalho Relacionado}{5}{chapter.2}%
+\hypertarget {chap-2}{}
+\hypertarget {sec-2.1}{}
+\contentsline {section}{\numberline {2.1}Equipamentos de Leitura}{5}{section.2.1}%
+\hypertarget {sec-2.2}{}
+\contentsline {section}{\numberline {2.2}Solu\c c\~oes Semelhantes}{6}{section.2.2}%
+\hypertarget {sec-2.3}{}
+\contentsline {section}{\numberline {2.3}MagicDraw}{8}{section.2.3}%
+\hypertarget {subsec-2.3.1}{}
+\contentsline {subsection}{\numberline {2.3.1}Linguagem SysML}{8}{subsection.2.3.1}%
+\hypertarget {subsec-2.3.2}{}
+\contentsline {subsection}{\numberline {2.3.2}Modelo de Dados Cameo}{9}{subsection.2.3.2}%
+\contentsline {chapter}{\numberline {3}An\'alise do Problema}{11}{chapter.3}%
+\hypertarget {chap-3}{}
+\hypertarget {sec-3.1}{}
+\contentsline {section}{\numberline {3.1}Arquitetura L\'ogica do Sistema}{11}{section.3.1}%
+\hypertarget {sec-3.2}{}
+\contentsline {section}{\numberline {3.2}Requisitos do Sistema}{12}{section.3.2}%
+\hypertarget {subsec-3.2.1}{}
+\contentsline {subsection}{\numberline {3.2.1}Requisitos Funcionais}{12}{subsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.1.1}Requisitos do Sistema}{13}{subsubsection.3.2.1.1}%
+\contentsline {subsubsection}{\numberline {3.2.1.2}Requisitos do Sistema de Gest\~ao de Consumos}{14}{subsubsection.3.2.1.2}%
+\hypertarget {subsec-3.2.2}{}
+\contentsline {subsection}{\numberline {3.2.2}Requisitos n\~{a}o Funcionais}{14}{subsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}Requisitos n\~{a}o Funcionais do Sistema}{15}{subsubsection.3.2.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}Requisitos n\~{a}o Funcionais do Servidor}{15}{subsubsection.3.2.2.2}%
+\hypertarget {sec-3.3}{}
+\contentsline {section}{\numberline {3.3}Casos de Utiliza\c c\~ao}{16}{section.3.3}%
+\hypertarget {subsec-3.3.1}{}
+\contentsline {subsection}{\numberline {3.3.1}Subscri\c c\~ao e Autentica\c c\~ao}{16}{subsection.3.3.1}%
+\hypertarget {subsec-3.3.2}{}
+\contentsline {subsection}{\numberline {3.3.2}Registos de Contratos e Contadores}{18}{subsection.3.3.2}%
+\hypertarget {subsec-3.3.3}{}
+\contentsline {subsection}{\numberline {3.3.3}Visualizar Informa\c c\~ao do Utilizador}{21}{subsection.3.3.3}%
+\hypertarget {subsec-3.3.4}{}
+\contentsline {subsection}{\numberline {3.3.4}Visualizar Informa\c c\~ao do Administrador}{21}{subsection.3.3.4}%
+\hypertarget {subsec-3.3.5}{}
+\contentsline {subsection}{\numberline {3.3.5}Envio de Notifica\c c\~oes}{22}{subsection.3.3.5}%
+\hypertarget {sec-3.4}{}
+\contentsline {section}{\numberline {3.4}\textit {Mockups} da Interface com o Utilizador}{23}{section.3.4}%
+\hypertarget {sec-3.5}{}
+\contentsline {section}{\numberline {3.5}Sistema de Base Dados}{27}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Implementa\c c\~ao do Modelo}{29}{chapter.4}%
+\hypertarget {chap-4}{}
+\hypertarget {sec-4.1}{}
+\contentsline {section}{\numberline {4.1}Arquitetura Tecnol\'ogica}{29}{section.4.1}%
+\hypertarget {sec-4.2}{}
+\contentsline {section}{\numberline {4.2}Prepara\c c\~ao das Imagens para tratamento por \textit {OCR}}{31}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Valida\c c\~oes e Testes}{33}{chapter.5}%
+\hypertarget {chap-5}{}
+\hypertarget {sec-5.1}{}
+\contentsline {section}{\numberline {5.1}\textit {Login}}{33}{section.5.1}%
+\hypertarget {sec-5.2}{}
+\contentsline {section}{\numberline {5.2}Registar Utilizador}{34}{section.5.2}%
+\hypertarget {sec-5.3}{}
+\contentsline {section}{\numberline {5.3}P\'agina Principal}{35}{section.5.3}%
+\hypertarget {sec-5.4}{}
+\contentsline {section}{\numberline {5.4}Perfil de Utilizador}{36}{section.5.4}%
+\hypertarget {sec-5.5}{}
+\contentsline {section}{\numberline {5.5}Registo de Contratos}{37}{section.5.5}%
+\hypertarget {sec-5.6}{}
+\contentsline {section}{\numberline {5.6}Consultar}{38}{section.5.6}%
+\hypertarget {subsec-5.6.1}{}
+\contentsline {subsection}{\numberline {5.6.1}Consumos}{38}{subsection.5.6.1}%
+\hypertarget {subsec-5.6.2}{}
+\contentsline {subsection}{\numberline {5.6.2}Contratos}{39}{subsection.5.6.2}%
+\hypertarget {sec-5.7}{}
+\contentsline {section}{\numberline {5.7}Enviar Consumos}{40}{section.5.7}%
+\hypertarget {sec-5.8}{}
+\contentsline {section}{\numberline {5.8}Notifica\c c\~oes}{42}{section.5.8}%
+\contentsline {chapter}{\numberline {6}Conclus\~oes e Trabalho Futuro}{43}{chapter.6}%
+\hypertarget {chap-6}{}
+\hypertarget {sec-6.1}{}
+\contentsline {section}{\numberline {6.1}Situa\c c\~ao Atual}{43}{section.6.1}%
+\hypertarget {sec-6.2}{}
+\contentsline {section}{\numberline {6.2}Perspetivas Futuras}{44}{section.6.2}%
+\hypertarget {sec-6.3}{}
+\contentsline {section}{\numberline {6.3}Considera\c c\~oes Finais}{44}{section.6.3}%
+\contentsline {chapter}{\numberline {A}Diagrama de Atividades}{47}{appendix.A}%
+\hypertarget {chap-A}{}
+\hypertarget {sec-A.1}{}
+\contentsline {section}{\numberline {A.1}Diagrama de Atividades - Autentica\c c\~ao}{47}{section.A.1}%
+\hypertarget {sec-A.2}{}
+\contentsline {section}{\numberline {A.2}Diagrama de Atividades - Registo de Contadores}{48}{section.A.2}%
+\contentsline {chapter}{\numberline {B}Modelo Entidade Associa\c c\~ao da Base Dados}{49}{appendix.B}%
+\hypertarget {chap-B}{}
+\contentsline {chapter}{Bibliografia}{51}{appendix*.46}%

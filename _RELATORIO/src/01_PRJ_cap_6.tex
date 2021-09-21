@@ -1,0 +1,32 @@
+%%________________________________________________________________________
+\chapter{Conclusões e Trabalho Futuro}
+\label{ch:conclusoesTrabalhoFuturo}
+
+%%________________________________________________________________________
+Neste capítulo são apresentadas as seções que representam a conclusão deste projeto. A \autoref{sec:situacao_atual} apresenta o que já foi concluído neste projeto, a \autoref{sec:perspetivas_futuras} apresenta o que se pode fazer futuramente e a \autoref{sec:consideracoes_finais} apresenta as considerações finais.
+
+\section{Situação Atual}
+\label{sec:situacao_atual}
+No âmbito deste relatório, foi proposta a construção de um sistema informático, que pudesse efetuar leituras e enviar as mesmas para uma empresa fornecedora de serviços de abastecimento de água, integrada com o sistema construído. Para construção deste sistema, foi desenhada uma arquitetura tecnológica e foi efetuado o levantamento de todos os seus requisitos, funcionais e não funcionais, bem como os \textit{MockUps} que demonstram a estrutura do sistema \texttt{WaterSpy}. 
+
+Para efeitos de avaliação experimental, e como não existe nada implementado da parte das empresas fornecedoras, foi implementado um \texttt{Sistema de Gestão de Consumos} que simula uma empresa fornecedora. Este sistema recebe as leituras efetuadas pelo cidadão e por sua vez responde ao sistema \texttt{WaterSpy} que recebeu essa leitura, para que assim seja enviado um \textit{e-mail} ao cidadão a informar da receção da leitura.
+Como resultado, deste projeto resulta numa \texttt{API}, que deverá no futuro ser implementado pelas empresas que queiram integrar este sistema nos seus sistemas informáticos.
+
+Para uma melhor experiência de utilização do sistema \texttt{WaterSpy}, foi implementada uma funcionalidade, que permite a leitura dos valores do contador por captura de imagem. Esta funcionalidade funciona com o auxilio de uma biblioteca do \texttt{NodeJs}, um \texttt{OCR}, que permite a interpretação de caracteres, neste caso algarismos, de uma imagem. Assim esta funcionalidade veio permitir, uma nova interação do cidadão, no âmbito da recolha de dados da leitura e o seu envio.
+
+Sendo assim, o sistema desenvolvido (\texttt{WaterSpy}) tem a capacidade de melhorar a vida dos seus utilizadores, na questão da leitura e dos envios das leituras, tornando mais fácil e rápido todo este processo. É de salientar, que este sistema, não vai substituir de modo algum, o envio do funcionário, para fazer a leituras periódicas, o funcionário terá à mesma de efetuar deslocações periódicas, mas vai sim substituir, o envio das contagens por telefone melhorando sim, o envio das leituras efetuadas tornando este método muito mais rápido e simples.
+
+\section{Perspetivas Futuras}
+\label{sec:perspetivas_futuras}
+No decorrer deste relatório, foram identificados aspetos que podem vir a ser 
+desenvolvidos no âmbito de trabalho futuro, nomeadamente, quanto ao \texttt{OCR} poder-se-ia desenvolver um próprio, de modo a ser um mais robusto e mais preciso, na interpretação de algarismos.
+Quanto á interface gráfica poder-se-ia ter alguns ajustes, tais como incluir novos ecrãs de gráficos, de modo a ter uma visão, mais completa dos consumos efetuados, pelos utilizadores.
+ 
+
+\section{Considerações Finais}
+\label{sec:consideracoes_finais}
+As atividades realizadas no âmbito deste relatório foram cumpridas dentro do prazo estipulado, como todos os seus objetivos definidos. Neste projeto, optamos por escolher outras tecnologias e ferramentas de trabalho, tais como o \texttt{MagicDraw}, \texttt{NodeJs} e \texttt{Angular 12}, isto para conhecer e aprender essas novas tecnologias e ferramentas de modo a obter mais conhecimento, do que é utilizado hoje em dia.
+
+As dificuldades sentidas, na realização deste projeto passaram, pela leitura de imagens por \texttt{OCR}, o que foi complicado, no sentido de acertar os parâmetros, para uma melhor precisão, de interpretação dos algarismos. O envio de \textit{e-mail}, também foi uma dificuldade sentida, por motivos de segurança, impostas pelas empresas fornecedores de \textit{e-mail}, como a \textit{Google}, que não deixa enviar \textit{e-mails}.
+
+Em suma, com o que foi realizado, neste projeto e apresentado como futuras melhorias é possível, assim dar continuidade a este projeto e abrir portas para outras investigações, tais como, criação de um \texttt{OCR} para análise e reconhecimento de caracteres, com mais precisão, na análise e reconhecimento.

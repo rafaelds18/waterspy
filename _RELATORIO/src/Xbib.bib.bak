@@ -1,0 +1,234 @@
+%________________________________________________________________________
+% LERCM | PROJETO
+% 2012 / 2013
+% Modelo para relatorio | bibliografia
+% PTS / MAI.2013
+%________________________________________________________________________
+
+
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+@ARTICLE{Elzinga_Mills_2011,
+  AUTHOR =       {Kenneth Elzinga and David Mills},
+  TITLE =        {The Lerner Index of Monopoly Power: Origins and Uses},
+  JOURNAL =      {American Economic Review: Papers \& Proceedings},
+  YEAR =         {2011},
+  volume =       {101},
+  number =       {3},
+  pages =        {},
+  month =        {January},
+  note =         {},
+  abstract =     {},
+  keywords =     {},
+  source =       {http://ssrn.com/abstract=1884993},
+}
+
+
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+@INPROCEEDINGS{Boutilier_et_al_1995,
+  AUTHOR =       {Craig Boutilier and Richard Dearden and Moise's Goldszmidt},
+  TITLE =        {Exploiting Structure in Policy Construction},
+  BOOKTITLE =    {Proceedings of the IJCAI-95},
+  YEAR =         {1995},
+  editor =       {},
+  volume =       {},
+  number =       {},
+  series =       {},
+  pages =        {1104--1111},
+  address =      {},
+  month =        {},
+  organization = {},
+  publisher =    {},
+  note =         {},
+  abstract =     {},
+  keywords =     {},
+  url =          {},
+}
+
+
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+@BOOK{Bellifemine_et_al_2007,
+  AUTHOR =       {Fabio Luigi Bellifemine and Giovanni Caire and Dominic Greenwood},
+  editor =       {},
+  TITLE =        {Developing Multi-Agent Systems with {JADE}},
+  PUBLISHER =    {Wiley},
+  YEAR =         {2007},
+  volume =       {},
+  number =       {},
+  series =       {Wiley Series in Agent Technology},
+  address =      {},
+  edition =      {},
+  month =        {April},
+  note =         {},
+  abstract =     {},
+  isbn =         {},
+  price =        {},
+  keywords =     {},
+  source =       {},
+}
+
+
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+@INBOOK{Wooldridge_2000,
+  AUTHOR =       {Michael Wooldridge},
+  editor =       {},
+  TITLE =        {Reasoning About Rational Agents},
+  CHAPTER =      {Implementing Rational Agents},
+  pages =        {},
+  PUBLISHER =    {The MIT Press},
+  YEAR =         {2000},
+  volume =       {},
+  number =       {},
+  series =       {},
+  type =         {},
+  address =      {},
+  edition =      {},
+  month =        {},
+  note =         {},
+  abstract =     {},
+  keywords =     {},
+}
+
+
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+@INCOLLECTION{Howard_Matheson_1984,
+  AUTHOR =       {Ronald Howard and James Matheson},
+  TITLE =        {Influence Diagrams},
+  BOOKTITLE =    {Readings on the Principles and Applications of Decision Analysis},
+  PUBLISHER =    {Strategic Decision Group},
+  YEAR =         {1984},
+  editor =       {},
+  volume =       {2},
+  number =       {},
+  series =       {},
+  type =         {},
+  chapter =      {},
+  pages =        {721--762},
+  address =      {Menlo Park, CA},
+  edition =      {},
+  month =        {},
+  note =         {},
+  abstract =     {},
+  keywords =     {},
+}
+
+
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+@MISC{Python_2012,
+  author =       {Python3.2.3},
+  title =        {Python Programming Language},
+  howpublished = {\url{http://docs.python.org/py3k/}},
+  year =         {2012},
+  month =        {Apr.},
+  note =         {},
+  abstract =     {},
+  keywords =     {},
+  source =       {},
+}
+
+
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+@TECHREPORT{Marin_2006,
+  AUTHOR =       {Draltan Marin},
+  TITLE =        {A Formalization of {RDF} (Applications de la Logique á la sémantique du {Web})},
+  INSTITUTION =  {Dept. Computer Science, Ecole Polytechnique, Universidad de Chile},
+  YEAR =         {2006},
+  type =         {},
+  number =       {},
+  address =      {TR/DCC-2006-8},
+  month =        {},
+  note =         {},
+  abstract =     {},
+  keywords =     {},
+  source =       {},
+}
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+@MISC{Leitura_Contadores_2017,
+author = {Leitura Contadores},
+title = {Leitura de contadores de água, luz e gás},
+month = {Dezembro},
+year = {2017},
+keywords = {Leitura contadores},
+howpublished = {\url{https://play.google.com/store/apps/details?id=com.water.consumption&hl=pt_PT&gl=US}}
+}
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+@MISC{EyeOnWater_2016,
+title = {EyeOnWater},
+month = {Novembro},
+year = {2016},
+keywords = {EyeOnWater},
+howpublished = {\url{https://play.google.com/store/apps/details?id=com.water.consumption&hl=pt_PT&gl=US}}
+}
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+@MISC{myAqua_2014,
+author = {myAqua},
+title = {myAqua},
+month = {Julho},
+year = {2014},
+keywords = {EyeOnWater},
+howpublished = {\url{https://play.google.com/store/apps/details?id=com.epal.myaqua&hl=pt_PT&gl=US}}
+}
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+@MISC{Aguas_Porto_2016,
+author = {Aguas Porto},
+title = {Aguas Porto},
+month = {Março},
+year = {2016},
+keywords = {Aguas Porto},
+howpublished = {\url{https://www.aguasdoporto.pt/leitura-do-contador/comunicacao-de-leituras}}
+}
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+@MISC{SMAS_Almada_2015,
+author = {SMAS Almada},
+title = {SMAS Almada},
+month = {Abril},
+year = {2015},
+keywords = {SMAS Almada},
+howpublished = {\url{https://www.smasalmada.pt/web/portal/leitura-de-contador}}
+}
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+@MISC{CM_Funchal,
+author = {CM Funchal},
+title = {CM Funchal},
+month = {},
+year = {},
+keywords = {CM Funchal},
+howpublished = {\url{http://www.cm-funchal.pt/pt/servicos-online/leitura-do-contador-da-agua.html}}
+}

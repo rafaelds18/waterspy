@@ -1,0 +1,49 @@
+\babel@toc {portuguese}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Contador de \'agua\relax }}{6}{figure.caption.11}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Arquitetura L\'ogica do Sistema\relax }}{11}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Casos de Utiliza\c c\~ao - Subscri\c c\~ao e Autentica\c c\~ao\relax }}{17}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagrama de Atividades - Subscri\c c\~ao\relax }}{17}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Casos de Utiliza\c c\~ao - Registos\relax }}{19}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Casos de Utiliza\c c\~ao - Envio de Leituras\relax }}{19}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Diagrama de Atividades - Tirar fotografia ao contador\relax }}{20}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Casos de Utiliza\c c\~ao - Visualizar Informa\c c\~ao\relax }}{21}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Casos de Utiliza\c c\~ao - Visualizar Informa\c c\~ao Administrador\relax }}{21}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Casos de Utiliza\c c\~ao - Envio de Notifica\c c\~oes\relax }}{22}{figure.caption.25}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Ecr\~as de \textit {Login} e de Registo\relax }}{23}{figure.caption.26}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Ecr\~a de \textit {Login} }}}{23}{subfigure.10.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Ecr\~a de Registo }}}{23}{subfigure.10.2}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Ecr\~a Principal\relax }}{24}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Ecr\~a de Registo de Contratos\relax }}{25}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Ecr\~a de Envio de Leituras\relax }}{26}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Modelo Entidade Associa\c c\~ao Simplificado da Base de Dados\relax }}{27}{figure.caption.30}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Arquitetura utilizada\relax }}{29}{figure.caption.31}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Imagens antes e depois da leitura do \textit {OCR}\relax }}{31}{figure.caption.32}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Imagem original }}}{31}{subfigure.2.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Imagem usada para o \textit {OCR} }}}{31}{subfigure.2.2}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Ecr\~a de Valida\c c\~ao/Teste do \textit {Login}\relax }}{34}{figure.caption.33}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Ecr\~a de Valida\c c\~ao/Teste de Registo do Utilizador\relax }}{34}{figure.caption.34}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Imagens do Ecr\~a Principal - P\'agina Principal e \textit {Menu}\relax }}{35}{figure.caption.35}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Ecr\~a Principal - P\'agina Principal }}}{35}{subfigure.3.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Ecr\~a Principal - \textit {Menu} }}}{35}{subfigure.3.2}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Ecr\~a de Valida\c c\~ao/Teste do Perfil de Utilizador\relax }}{36}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Ecr\~a de Valida\c c\~ao/Teste do Registo de Contratos\relax }}{37}{figure.caption.37}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Ecr\~a de Consulta dos Consumos\relax }}{38}{figure.caption.38}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Ecr\~a Consulta de Consumos - Consumo Semanal }}}{38}{subfigure.6.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Ecr\~a Consulta de Consumos - Consumo Mensal }}}{38}{subfigure.6.2}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Ecr\~a de Valida\c c\~ao/Teste de \textit {Consulta de Contratos}\relax }}{39}{figure.caption.39}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Ecr\~a de Envio de Consumos\relax }}{40}{figure.caption.40}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Ecr\~a Envio de Consumos - Envio por Texto }}}{40}{subfigure.8.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Ecr\~a Envio de Consumos - Envio por Fotografia }}}{40}{subfigure.8.2}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Email recebido por parte do Sistema\relax }}{41}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Ecr\~a de Valida\c c\~ao/Teste das Notifica\c c\~oes\relax }}{42}{figure.caption.42}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Diagrama de Atividades - Autentica\c c\~ao\relax }}{47}{figure.caption.43}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Diagrama de Atividades - Registo de Contadores\relax }}{48}{figure.caption.44}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Modelo Entidade Associa\c c\~ao da Base de Dados\relax }}{49}{figure.caption.45}%

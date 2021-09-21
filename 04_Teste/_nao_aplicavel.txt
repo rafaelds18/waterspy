@@ -1,0 +1,2 @@
+Para testes realizados, não houve necessidade, de criação de ficheiros de testes.
+Todos os testes foram realizados na aplicação web/mobile.

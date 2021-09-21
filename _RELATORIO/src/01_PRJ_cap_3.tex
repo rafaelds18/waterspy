@@ -1,0 +1,356 @@
+%%________________________________________________________________________
+\chapter{Análise do Problema}
+\label{ch:modeloProposto}
+%%________________________________________________________________________
+
+Neste capitulo apresenta-se a análise do problema. Na \autoref{sec:arquiteturaDoSistema} apresenta-se a arquitetura lógica do sistema, na \autoref{sec:requisitos} apresentam-se os requisitos do sistema e na \autoref{sec:casosUtilizacao} apresentam-se os casos de utilização.
+
+\section{Arquitetura Lógica do Sistema}
+\label{sec:arquiteturaDoSistema}
+A \autoref{fig:arquiteturaDoSistema} apresenta a arquitetura lógica do sistema informático implementado no contexto deste projeto e descreve a organização lógica do sistema, bem como os elementos que o compõem. 
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=\textwidth]{Imagens/Arquitetura/ArquiteturaSistema.pdf}
+	\caption{Arquitetura Lógica do Sistema}
+	\label{fig:arquiteturaDoSistema}
+\end{figure}
+
+O nosso sistema informático é constituído por três elementos: a \texttt{Interface Com o Utilizador}, o \texttt{Servidor} e o \texttt{Sistema de Gestão de Base Dados}. A \texttt{Interface Com o Utilizador} representa o ambiente gráfico com que o utilizador irá interagir e executar as ações que o sistema permite. O \texttt{Servidor} representa toda a parte lógica do sistema, é onde se efetuam todas as comunicações com o \texttt{Sistema de Gestão de Base Dados} para gravar dados ou obter dados e envia as respostas com esses dados previamente tratados para a \texttt{Interface Com o Utilizador}. O \texttt{Sistema de Gestão de Base Dados} representa um sistema que contem a Base Dados e as tabelas necessária para o funcionamento do sistema \texttt{WaterSpy}. O \texttt{Sistema de Gestão de Consumos} representa, o sistema informático das empresas fornecedoras do serviço de água, que irá comunicar com o nosso sistema informático. No nosso projeto vamos criar um sistema, que simule este elemento, pelo motivo de não ter nenhuma empresa integrada com o sistema \texttt{WaterSpy}. 
+
+%%________________________________________________________________________
+\section{Requisitos do Sistema}
+\label{sec:requisitos}
+%%________________________________________________________________________
+
+Nesta secção apresentam-se os requisitos necessários para implementação do sistema informático \texttt{WaterSpy}. Os requisitos (funcionais e não funcionais) definem o que um sistema deve fazer e sob que restrições. 
+Os requisitos funcionais definem uma função de um sistema de software, representam o que o software faz, em termos de tarefas e serviços.
+Os requisitos não funcionais estão relacionados com a qualidade do serviço prestado pelo sistema, incluindo características como desempenho, disponibilidade, níveis de segurança, portabilidade, privacidade, consumo de memória e disco, dentre outros. Ou seja, os requisitos não-funcionais definem restrições ao funcionamento do sistema. 
+
+Na \autoref{subsec:requisitosFuncionais} são apresentados os requisitos funcionais e na \autoref{subsec:requisitosNaoFuncionais} os requisitos não funcionais.
+\subsection{Requisitos Funcionais}
+\label{subsec:requisitosFuncionais}
+
+Nesta secção são apresentados os requisitos funcionais do sistema \texttt{WaterSpy} na \autoref{subsubsec:requisitosSistema} e do \texttt{Sistema de Gestão de Consumos} na \autoref{subsubsec:requisitosDoSMAA}.
+
+\subsubsection{Requisitos do Sistema}
+\label{subsubsec:requisitosSistema}
+A \autoref{tab:reqFuncSistema} apresenta os requisitos funcionais do sistema.
+\begin{table}[ht!]
+\caption{Requisitos Funcionais do Sistema}
+\label{tab:reqFuncSistema}
+   \centering
+   \begin{tabular}{l l}
+   	  \hline \hline
+   	  Requisito & Descrição
+   	  \\
+      \hline \hline
+      \textit{RF 1} & \textit{Subscrever}
+      \\
+      \textit{RF 2} & \textit{Autenticar}
+      \\ 
+      \textit{RF 2.1} & \textit{Validar autenticação}
+      \\ 
+      \textit{RF 3} & \textit{Registar}
+      \\ 
+      \textit{RF 3.1} & \textit{Associar contratos}
+      \\ 
+      \textit{RF 3.2} & \textit{Registar manualmente ou por fotografia o contador}
+      \\ 
+      \textit{RF 3.3} & \textit{Validar registo do contador por contrato}
+      \\ 
+      \textit{RF 3.4} & \textit{Registar leituras}
+      \\ 
+      \textit{RF 4} & \textit{Consultar}
+      \\ 
+      \textit{RF 4.1} & \textit{Consultar histórico de leituras}
+      \\
+      \hline \hline
+   \end{tabular}
+\end{table}
+
+
+O requisito \texttt{RF 1} representa a subscrição do utilizador no nosso sistema para que seja criada uma conta para o mesmo.
+O requisito \texttt{RF 2} representa a autenticação onde o sistema vai verificar os dados que foram subscritos no sistema e validar os mesmos (requisito \texttt{RF 2.1}), reconhecendo o utilizador que está a autenticar-se, pode assim usufruir das restantes funcionalidades do sistema.
+O requisito \texttt{RF 3} representa o registo, função do sistema que dá origem a vários sub-requisitos, os sub-requisitos originados é onde o sistema vai associar contratos dos consumidores (requisito \texttt{RF 3.1}), registar o contador (requisito \texttt{RF 3.2}) e registar as leituras a serem enviadas (requisito \texttt{RF 3.3}) para o Sistema de Gestão de Consumos.
+
+A associação de contratos (requisito \texttt{RF 3.1}) representa onde o consumidor pode associar o contrato ou contratos que tem com a empresa à sua conta do sistema. O registo do contador (requisto \texttt{RF 3.2}) pode ser feito manualmente ou por meio de uma fotografia que o próprio consumidor tira ao valor que se encontra no contador, esses dados serão validados (requisito \texttt{RF 3.3}) e gravados no \texttt{Sistema de Gestão de Base Dados}. 
+
+
+A \autoref{tab:reqFuncSistemaLeituras} apresenta em detalhe os requisitos funcionais sobre o registo das leituras (requisito \texttt{RF 3.4}) que se faz de forma idêntica ao caso anterior sendo que se os dados forem válidos para além de serem gravados serão também enviados à respetiva empresa onde é feita a atualização do valor dos consumos (requisito \texttt{RF 3.4.4}).
+
+\begin{table}[ht!]
+\caption{Requisitos Funcionais do Sistema - Registar Leituras}
+\label{tab:reqFuncSistemaLeituras}
+   \centering
+   \begin{tabular}{l l}
+      \hline \hline
+   	  Requisito & Descrição
+   	  \\
+      \hline \hline
+      \textit{RF 3.4.1} & \textit{Leitura das contagens dos contadores por fotografia}
+      \\ 
+      \textit{RF 3.4.2} & \textit{Enviar leitura dos contadores}
+      \\ 
+      \textit{RF 3.4.3} & \textit{Validar valor da leitura}
+      \\ 
+      \textit{RF 3.4.4} & \textit{Actualizar os consumos após envio de leitura}
+      \\
+      \hline \hline
+   \end{tabular}
+\end{table}
+
+\subsubsection{Requisitos do Sistema de Gestão de Consumos}
+\label{subsubsec:requisitosDoSMAA}
+A \autoref{tab:reqFuncSistemaConsumos} apresenta os requisitos funcionais do sistema de gestão de consumos. 
+\begin{table}[ht!]
+\caption{Requisitos Funcionais do Sistema - Gestão de Consumos}
+\label{tab:reqFuncSistemaConsumos}
+   \centering
+   \begin{tabular}{l l}
+      \hline \hline
+   	  Requisito & Descrição
+   	  \\
+      \hline \hline
+      \textit{RF\textsubscript{SGC} 1} & \textit{Enviar Notificações}
+      \\ 
+      \textit{RF\textsubscript{SGC} 1.1} & \textit{Notificar os indicadores de consumos ao cliente}
+      \\ 
+      \textit{RF\textsubscript{SGC} 1.2} & \textit{Notificar a existência de eventos}
+      \\ 
+      \textit{RF\textsubscript{SGC} 2} & \textit{Processar Leituras}
+      \\
+      \hline \hline
+   \end{tabular}
+\end{table}
+O requisito \texttt{RF\textsubscript{SGC} 1} dá origem a dois sub-requisitos em que o sistema tem de notificar os indicadores dos consumos ao cliente (requisito \texttt{RF\textsubscript{SGC} 1.1}) e tem de notificar a existência de eventos ao cliente (requisito \texttt{RF\textsubscript{SGC} 1.2}), isto é, quando o sistema tem de notificar os indicadores dos consumos ao cliente trata-se de notificar as estimativas do consumo feito ao cliente, o notificar a existência de eventos trata-se de notificar o pedido de enviar a leitura, leitura incorreta.
+
+\subsection{Requisitos n\~{a}o Funcionais}
+\label{subsec:requisitosNaoFuncionais} 
+Nesta secção são apresentados os requisitos não funcionais de todo o sistema na \autoref{subsubsec:requisitosNaoFuncionaisSistema} e do servidor na \autoref{subsubsec:requisitosNaoFuncionaisServidor}.
+
+\subsubsection{Requisitos n\~{a}o Funcionais do Sistema}
+\label{subsubsec:requisitosNaoFuncionaisSistema}
+A \autoref{tab:reqNaoFuncSistema} apresenta os requisitos não funcionais do sistema.
+\begin{table}[h]
+\caption{Requisitos não Funcionais do Sistema}
+\label{tab:reqNaoFuncSistema}
+   \centering
+   \begin{tabular}{l l}
+      \hline \hline
+   	  Requisito & Descrição
+   	  \\
+      \hline \hline
+      \textit{RnF 1} & \textit{Proteção de dados}
+      \\ 
+      \textit{RnF 2} & \textit{Compatibilidade de dispositivos}
+      \\
+      \textit{RnF 3} & \textit{Integrabilidade}
+      \\
+      \textit{RnF 4} & \textit{Usabilidade}
+      \\
+      \hline \hline
+   \end{tabular}
+\end{table}
+O requisito \texttt{RnF 1} representa que os dados devem ser protegidos, isto é, garantir que todos os dados passados por comunicação são cifrados e que todos os dados guardados num \texttt{Sistema de Gestão de Base Dados} com acesso a informação privilegiada só são acedidos por administradores do sistema e que esses dados mais críticos sejam também cifrados. O sistema tem de garantir a compatibilidade com todos os dispositivos (requisito \texttt{RnF 2}), e também ser possível integrar com outros sistemas externos como os das empresas (requisito \texttt{RnF 3}). Por último deve ter uma interface gráfica que cumpra as normas de usabilidade de modo a garantir que a interface seja de fácil uso e eficaz para o utilizador (requisito \texttt{RnF 4}).
+
+\subsubsection{Requisitos n\~{a}o Funcionais do Servidor}
+\label{subsubsec:requisitosNaoFuncionaisServidor}
+A \autoref{tab:reqNaoFuncServidor} apresenta os requisitos não funcionais do servidor.
+\begin{table}[h]
+\caption{Requisitos não Funcionais do Servidor}
+\label{tab:reqNaoFuncServidor}
+   \centering
+   \begin{tabular}{l l}
+      \hline \hline
+   	  Requisito & Descrição
+   	  \\
+      \hline \hline
+      \textit{RnF\textsubscript{Serv} 1} & \textit{Arquitetura modular}
+      \\ 
+      \textit{RnF\textsubscript{Serv} 2} & \textit{Testes unitários}
+      \\ 
+      \textit{RnF\textsubscript{Serv} 3} & \textit{Comunicação feita no sistema}
+      \\
+      \hline \hline
+   \end{tabular}
+\end{table}
+
+O servidor é composto por uma arquitetura modular (requisito \texttt{RnF\textsubscript{Serv} 1}), ou seja, garantir que todo a arquitetura do código presente no servidor é composta por funções/métodos abstratos e classes abstratas de modo que seja possível serem utilizados por outros sistemas, é composto por testes unitários (requisito \texttt{RnF\textsubscript{Serv} 2}), testes que vão cobrir todo o código de modo a garantir que não existem erros e é composto pela comunicação no sistema (requisito \texttt{RnF\textsubscript{Serv} 3}) que deve ser feita via \textit{Representational State Transfer} (\texttt{REST}) através de mensagens do tipo \textit{JavaScript Object Notation} (\texttt{JSON}).
+
+\section{Casos de Utilização}
+\label{sec:casosUtilizacao}
+
+Nesta secção são apresentados os casos de utilização do sistema. Apresenta-se o caso de utilização de subscrição e autenticação na \autoref{subsec:subscricao_autenticacao}, na \autoref{subsec:registos_contratos_contadores} apresenta-se o caso de utilização de registos de contratos e de contadores, na \autoref{subsec:visualizar_info_utilizador} apresenta-se o caso de utilização de visualizar informação do utilizador, na \autoref{subsec:visualizar_info_admin} apresenta-se o caso de utilização de visualizar informação do administrador e na \autoref{subsec:envio_notificacoes} apresenta-se o caso de utilização envio de notificações. 
+
+Os casos de utilização representam a interação entre um actor (seja Humano ou não Humano) e o sistema. Cada caso de utilização tem uma descrição da funcionalidade que será construída no sistema. Um caso de utilização pode "incluir" outra funcionalidade de caso de utilização ou "estender" outro caso de utilização com seu próprio comportamento.
+
+\subsection{Subscrição e Autenticação}
+\label{subsec:subscricao_autenticacao}
+A \autoref{fig:uc_autenticacao} apresenta a \texttt{Subscrição} e a \texttt{Autenticação} dos utilizadores no sistema, tem-se como atores o \texttt{Utilizador} e a generalização deste em dois outros: o \texttt{Consumidor} e o \texttt{Administrador} que têm tipos de autenticação diferentes o que lhes vai permitir acesso a diferentes funcionalidades do sistema.
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=8.5cm]{Imagens/Casos/uc_autenticacao.pdf}
+      \caption{Casos de Utilização - Subscrição e Autenticação}
+      \label{fig:uc_autenticacao}
+\end{figure}
+
+\newpage
+A \autoref{fig:act_subscricao} descreve o diagrama de atividades que permite ao utilizador a criação de uma conta para aceder ao sistema. 
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=9cm]{Imagens/Atividades/act_subscricao.pdf}
+      \caption{Diagrama de Atividades - Subscrição}
+      \label{fig:act_subscricao}
+\end{figure}
+
+O diagrama apresenta o processo de \texttt{Subscrição} que começa com a atividade \texttt{Inserir Dados} onde o utilizador insere os dados pedidos. Após a atividade anterior passa-se para a seguinte \texttt{Validar dados inseridos}, em que caso os dados sejam inválidos volta-se ao ponto inicial caso contrário passa para atividade seguinte \texttt{Regista na BD}. Nesta atividade os dados são armazenados na base de dados e assim termina a \texttt{Subscrição}.
+
+No \autoref{sec:act_autenticacao} encontra-se o diagrama de atividades que descreve o processo que é feito para que o utilizador se possa autenticar após a subscrição já descrita.
+
+\subsection{Registos de Contratos e Contadores}
+\label{subsec:registos_contratos_contadores}
+Nesta seção apresentam-se os casos de utilização relacionados com os registos que podem ser efetuados no sistema. Vão ser apresentados dois tipos de atores o \texttt{Consumidor}, que se encontra na forma de um boneco para representar que é um ser humano a interagir, enquanto que o outro ator \texttt{Sistema de Gestão de Base  de Dados} está em forma de bloco, porque retrata um sistema informático que gere a Base de Dados e/ou um ser humano a gerir a Base de Dados.
+
+Na \autoref{fig:uc_registo1} observamos a \texttt{Associação de contratos} que consiste num consumidor associar no sistema o(s) número(s) dos contratos ao qual tem um ou mais contadores associados. O registo de contadores representa 
+a ação do consumidor registar um contador manualmente ou por fotografia num contrato já associado, estando representado pela ligação ``\textit{extend}" no caso tirar fotografia ao contador. Por último temos o \texttt{Armazenar Dados} em que os casos \texttt{Associação de contratos} e \texttt{Registo de contadores} estão ligados a este, por uma ligação ``\textit{include}", significando que o caso \texttt{Armazenar Dados} terá sempre de acontecer quando os outros 2 casos se verificarem. O ator \texttt{Sistema Gestão de Base Dados} será o responsável por armazenar estes dados.
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=13cm]{Imagens/Casos/uc_registos1.pdf}
+      \caption{Casos de Utilização - Registos}
+      \label{fig:uc_registo1}
+\end{figure}
+
+\newpage
+Na \autoref{fig:uc_registo2} observamos o envio de leituras que é efetuado pelo consumidor após tirar fotografia ao valor da leitura no seu contador, assim que a leitura for enviada é executado o \texttt{Interpretar Leituras} e após isso as mesmas serão armazenadas algo que vai ser tratado pelo \texttt{Sistema Gestão de Base Dados}.
+
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=12cm]{Imagens/Casos/uc_registos2.pdf}
+      \caption{Casos de Utilização - Envio de Leituras}
+      \label{fig:uc_registo2}
+\end{figure}
+
+\newpage
+A \autoref{fig:act_tirarfoto} representa o diagrama de atividades para que o utilizador possa tirar fotografias ao leitor dos contadores.
+
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=9cm]{Imagens/Atividades/act_tirarfoto.pdf}
+      \caption{Diagrama de Atividades - Tirar fotografia ao contador}
+      \label{fig:act_tirarfoto}
+\end{figure}
+
+Na \autoref{sec:act_contadores} encontra-se o diagrama de atividades para efetuar o registo de contadores.
+
+\clearpage
+
+\subsection{Visualizar Informação do Utilizador}
+\label{subsec:visualizar_info_utilizador}
+A \autoref{fig:uc_info} apresenta os casos em que o consumidor pode visualizar as suas informações dentro do sistema tais como o histórico de leituras e os seus indicadores de consumos. E aqui também se apresenta o caso em que o consumidor pode editar o seu perfil.
+
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=10cm]{Imagens/Casos/uc_info.pdf}
+      \caption{Casos de Utilização - Visualizar Informação}
+      \label{fig:uc_info}
+\end{figure}
+
+\subsection{Visualizar Informação do Administrador}
+\label{subsec:visualizar_info_admin}
+A \autoref{fig:uc_info_admin} apresenta os casos em que o administrador pode visualizar informações sobre qualquer consumidor e gerir os seus perfis e o próprio.
+
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=10cm]{Imagens/Casos/uc_info_admin.pdf}
+      \caption{Casos de Utilização - Visualizar Informação Administrador}
+      \label{fig:uc_info_admin}
+\end{figure}
+
+\newpage
+\subsection{Envio de Notificações}
+\label{subsec:envio_notificacoes}
+Neste caso de utilização de envio de notificações \autoref{fig:uc_notificacoes}, demonstra-se a interação do sistema implementado com o sistema de gestão de consumos e o administrador.
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=13cm]{Imagens/Casos/uc_notificacoes.pdf}
+      \caption{Casos de Utilização - Envio de Notificações}
+      \label{fig:uc_notificacoes}
+\end{figure}
+
+Os casos presentes são o envio de notificações e o processar leituras, o caso de envio de notificações divide-se em três casos, o envio de eventos, envio de alerta para envio de leituras e envio de estimativas, isto quer dizer que existem três possíveis casos de envio de notificações quando o sistema de gestão de consumos ou administrador acedem a este elemento. Quando acedem ao envio de notificações existe uma ligação designada de extensão que significa que o elemento ao qual é estendido o comportamento realizado naquele elemento só é realizado se necessário, neste caso o processar leituras que tem o comportamento de receber as leituras provenientes do consumidor e interpretá-las.
+
+\newpage
+
+\section{\textit{Mockups} da Interface com o Utilizador}
+\label{subsec:ecrasInterfaceUtilizador}
+Nesta secção apresentam-se detalhadamente os vários ecrãs da interface com o utilizador.
+
+A \autoref{fig:login_registo} apresenta os primeiros ecrãs da nossa interface, o ecrã de \textit{login} (\autoref{subFig:login}) e registo de novos utilizadores (\autoref{subFig:registo}).
+
+\begin{figure}[!ht]
+    \centering
+    \subfloat[\centering Ecrã de \textit{Login} \label{subFig:login}]
+    {{\includegraphics[width=5cm]{Imagens/Ecras/login.pdf} }}
+    \qquad
+    \subfloat[\centering Ecrã de Registo \label{subFig:registo}]
+    {{\includegraphics[width=5cm]{Imagens/Ecras/register.pdf} }}    
+    \caption{Ecrãs de \textit{Login} e de Registo}
+    \label{fig:login_registo}
+\end{figure}
+
+No primeiro ecrã \autoref{subFig:login}, o utilizador pode inserir as suas credenciais que lhe darão acesso às funcionalidades do nosso sistema. Caso ainda não se tenha registado, pode aceder ao ecrã de registo \autoref{subFig:registo} que é onde o utilizador se pode registar com o seu email.
+
+\newpage
+%\clearpage
+Após o login efetuado com sucesso, o utilizador é encaminhado para o ecrã o principal apresentado na \autoref{fig:initial}.
+
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=5cm]{Imagens/Ecras/initial.pdf}
+      \caption{Ecrã Principal}
+      \label{fig:initial}
+\end{figure}
+
+Neste ecrã, o utilizador pode ver o valor do último consumo enviado e se está com consumos excessivos através de um indicador colorido. Considera-se um consumo excessivo valores que estejam acima da média de valores enviados até ao momento. Pode também ver os seus últimos consumos semanais através de um gráfico. Pode facilmente aceder ao ecrã de consulta dos seus consumos de forma mais detalhada, ao ecrã de registo de contadores (\autoref{fig:register_contracts}) e ao ecrã para efetuar uma leitura (\autoref{fig:send_leituras}).
+
+\newpage
+%\clearpage
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=5cm]{Imagens/Ecras/register_contracts.pdf}
+      \caption{Ecrã de Registo de Contratos}
+      \label{fig:register_contracts}
+\end{figure}
+
+Neste ecrã, é possível o utilizador adicionar contratos que ficarão associados à sua conta, inserindo os dados necessários relativos ao seu contrato. Pode associar aqui ainda os vários contadores que pertençam ao contrato.
+
+\newpage
+
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=5cm]{Imagens/Ecras/send_leituras.pdf}
+      \caption{Ecrã de Envio de Leituras}
+      \label{fig:send_leituras}
+\end{figure}
+
+Neste ecrã, o utilizador escolhendo o contrato e o contador pode tirar fotografia ao leitor do seu contador e após a imagem ser analisada é mostrado ao utilizador o valor para confirmar se é o valor correto a enviar. Caso por algum motivo não consiga com a opção do uso da câmara pode sempre inserir manualmente o valor da sua leitura.
+
+\newpage
+\section{Sistema de Base Dados}
+\label{sec:sistemaBaseDados}
+
+Uma das componentes deste sistema é um sistema base de dados, que irá conter as várias informações dos utilizadores deste sistema. De modo a facilitar a leitura apresenta-se na \autoref{fig:modelo_EA} o modelo relacional simplificado da nossa base de dados. É um modelo simplificado pois não se apresentam os atributos de cada entidade. Para mais detalhes encontra-se no \autoref{ch:modeloEAcompleto} o modelo completo.
+
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=11cm]{Imagens/Modelos/ER_simp.pdf}
+      \caption{Modelo Entidade Associação Simplificado da Base de Dados}
+      \label{fig:modelo_EA}
+\end{figure}
+
+A entidade \texttt{User} representa os utilizadores que estão registados no sistema \textit{WaterSpy}. Para cada utilizador serão guardadas as informações principais como o \textit{email}, \textit{firstName}, \textit{lastName}, \textit{password} e imagem de perfil (\textit{image}). A entidade \texttt{Role} armazena os dois cargos que os utilizadores podem ter, o \texttt{Consumer} e o \texttt{Admin} que fornecem permissões diferentes de utilização. A entidade \texttt{UserRole} faz a ligação entre as duas entidades anteriores.
+
+A entidade \texttt{Contract} armazena as informações sobre os contratos que o consumidor tem, neste caso o \texttt{contractNumber} e uma descrição para facilitar ao utilizador perceber de onde se trata o contracto. Esta entidade está relacionada com a entidade \texttt{Supplier} que são os fornecedores do serviço para aquele contrato. O contrato também tem relação com a entidade \texttt{Meter} que armazena os números dos contadores relacionados com aquele contrato, que por sua vez tem uma relação com a entidade \texttt{Consumption} que armazena os valores enviados dos consumos e a sua data de envio.
+
+Por fim, a entidade \texttt{Notification} armazena as informações sobre as notificações que são enviadas ao utilizador.

@@ -1,0 +1,623 @@
+%%________________________________________________________________________
+%% LERCM | PROJETO
+%% 2012 / 2013
+%% Modelo para relatório
+%% v02 (inclui anexo sobre utilização sistema controlo de versões)
+%% PTS / MAI.2013
+%%________________________________________________________________________
+
+%\externaldocument{01_PRJ_cap_4_5_6}
+
+
+%%________________________________________________________________________
+\chapter{Introdução}
+\label{ch:introducao}
+%%________________________________________________________________________
+
+Nos dias de hoje, os serviços básicos e essenciais mais usados pelos cidadãos são a eletricidade, gás e água.
+As empresas fornecedoras destes serviços necessitam, para faturação, de efetuar leituras periódicas relativas aos consumos efetuados. Para a medição da água consumida é utilizado um dispositivo de medição volumétrica da água que passa numa parte da rede de abastecimento, que designamos por contador. No caso dos contadores manuais, essas leituras implicam a deslocação de um funcionário da empresa fornecedora ao local onde se encontra o contador algo que é demorado e dispendioso. Esta é uma das razões pela qual as empresas optam por calcular estes valores com base em estimativas, e efetuam as leituras reais com uma menor periodicidade. 
+
+Este valor tem um erro relativamente ao valor real pelo que se tem de calcular o consumo médio como mostra a \autoref{eq:consumoMedio} e a partir daí fazer uma estimativa consoante o número de dias como mostra a \autoref{eq:consumoEstimado}, pelo que é favorável desenvolver um sistema que possa efetuar as leituras remotamente.
+
+\begin{equation}
+\label{eq:consumoMedio}
+Consumo\: M\acute{e}dio\: Di\acute{a}rio = \dfrac{Consumo\:entre\:2\: leituras}{nº\: dias} 
+\end{equation} 
+
+
+\begin{equation}
+\label{eq:consumoEstimado}
+Consumo\:Estimado = Consumo\:M\acute{e}dio\:Di\acute{a}rio \times nº\: dias\:a\:estimar 
+\end{equation} 
+
+%Consumo Estimado = Consumo Médio Diário × nº dias a estimar
+Atualmente já existem contadores com sistemas inteligentes que permitem o envio dos consumos à empresa fornecedora, no entanto a instalação deste tipo de contadores ainda é bastante dispendiosa para a empresa fornecedora do serviço.
+%
+%Com o crescimento tecnológico a maior parte dos serviços que anteriormente teriam de ser feitos presencialmente passaram a ser facilitados pelos equipamentos tecnológicos. O mesmo pode acontecer com o envio de leituras da contagem de água sem ter de haver uma substituição dos contadores, não acarretando assim mais custos. Com este projeto pretendemos criar uma solução tecnológica que permita facilmente ao consumidor apenas através do uso de um dispositivo móvel tirar fotografias ao valor da leitura nos seus contadores e enviar à entidade fornecedora do serviço. Para isto a nossa solução vai fazer o reconhecimento dos caracteres presentes nas fotografias tiradas pelo consumidor recorrendo ao processo de OCR (\textit{Optical Character Recognition} ou Reconhecimento ótico de caracteres) enviando depois os valores para a entidade fornecedora.
+
+
+%Atualmente a maior parte dos consumidores possui contadores com sistema manual o que significa que o custo deste serviço vai ser calculado com base em estimativas, e que para haver uma leitura do valor real consumido a entidade fornecedora tem de enviar periodicamente colaboradores para fazer essas leituras. Tornando assim este tipo de serviço dispendioso para a entidade fornecedora.
+
+%A água, eletricidade e gás são os serviços básicos e essenciais mais usados pelos portugueses. Estes serviços são controlados por contadores, isto é, dispositivos que indicam ao consumidor final o valor que foi consumido pelo próprio.
+%
+%Atualmente a maior parte dos consumidores possui contadores com sistema manual o que significa que o custo deste serviço vai ser calculado com base em estimativas, e que para haver uma leitura do valor real consumido a entidade fornecedora tem de enviar periodicamente colaboradores para fazer essas leituras. Tornando assim este tipo de serviço dispendioso para a entidade fornecedora.
+%
+%Com o crescimento tecnológico a maior parte dos serviços que anteriormente teriam de ser feitos presencialmente passaram a ser facilitados pelos equipamentos tecnológicos. O mesmo pode acontecer com a entrega de leituras da contagem de água sem ter de haver uma substituição dos contadores, não acarretando assim mais gastos. Com este projeto pretendemos criar uma solução tecnológica que permita facilmente ao consumidor apenas através do uso de um dispositivo móvel tirar fotografias ao valor da leitura nos seus contadores e enviar à entidade fornecedora do serviço.
+
+\section{Objetivos}
+Com o crescimento tecnológico a maior parte dos serviços que anteriormente teriam de ser feitos presencialmente podem ser facilitados pelos equipamentos tecnológicos. O mesmo pode acontecer com o envio de leituras da contagem de água sem ter de haver uma substituição dos contadores, não acarretando assim mais custos para as empresas fornecedoras. 
+
+Com este projeto pretendemos criar uma solução tecnológica para todos os consumidores, para que facilmente possam enviar as suas leituras para as empresas fornecedoras do serviço.
+
+A solução passa por melhorar a interatividade homem-máquina com a criação de uma interface gráfica simpática para o utilizador (\textit{User-Friendly}), simples, intuitiva e de confiança.
+O utilizador através do uso de um dispositivo móvel, equipado com uma câmara fotográfica, ira, captar os valores do seu contador que por sua vez serão apresentados no ecrã e após confirmar os dados, será possível enviar a leitura para a empresa fornecedora.
+
+Para suportar esta solução vamos criar um sistema informático que vai efetuar o reconhecimento dos caracteres presentes nas fotografias tiradas pelo consumidor recorrendo ao processo de \texttt{OCR} (\textit{Optical Character Recognition} ou Reconhecimento ótico de caracteres) e após a confirmação pelo consumidor, irá enviar os valores para a empresa fornecedora.
+
+%Isto tudo será possível, como será possível registar na aplicação os contadores que têm, e apenas selecionando o que quer, basta só fazer a leitura e enviar, com esta aplicação será possível o utilizador receber notificações da entidade, se uma leitura esta em atraso ou em falta, tal como se aproxima a data de envio da leitura, será possível subscrever a eventos ou outras funcionalidades tais como, modo de ferias, isto é, quando utilizador colocar o modo de ferias a aplicação saberá que o consumo esperado naquele período de tempo será muito reduzido ou mesmo nenhum então o utilizador antes de ir de ferias faz um registo de leitura e quando chegar faz novamente um para confirmar assim se não houve algum consumo fora do espera e se sim é indicado que poderá existir um problema de fuga por exemplo no caso de água.
+
+\section{Motivação}
+A motivação para a realização deste projeto passou pela inovação, interação homem-máquina e na ajuda aos consumidores de serviços essenciais de modo a que consigam facilmente enviar as leituras dos seus consumos para as empresas sem passarem por um processo demoroso do envio das mesmas, notificar os consumidores de eventos como possíveis fugas e excesso de consumo. 
+Para tal, o utilizador passa a usufruir de um sistema informático capaz de operar em qualquer dispositivo, sendo assim capaz de realizar leituras através da câmara, consultar os seus consumos e enviar os mesmos para as empresas fornecedoras obtendo assim um serviço barato, simples e inovador com a interação do mundo tecnológico e real, possibilitando também a redução no consumo e poupando a escassez de recursos como a água.
+
+\section{Organização do Relatório}
+Este relatório está organizado em seis capítulos. Neste capítulo, é elaborada a introdução global pormenorizando o objetivo, a motivação e a organização deste projeto. No \autoref{ch:trabalhoRelacionado} (\nameref{ch:trabalhoRelacionado}), é descrito o trabalho relacionado, enunciando aspetos gerais associados à leitura de contadores, enumerando os sistemas semelhantes que mais se relacionam com este projeto. No \autoref{ch:modeloProposto} (\nameref{ch:modeloProposto}), especifica-se a arquitetura proposta para conceber o sistema detalhando os seus requisitos e casos de utilização. No \autoref{ch:implementacaoDoModelo} (\nameref{ch:implementacaoDoModelo}) é descrita a implementação do modelo definido no \autoref{ch:modeloProposto} (\nameref{ch:modeloProposto}). No \autoref{ch:validacaoTestes} (\nameref{ch:validacaoTestes}) especifica-se as validações e testes feitos ao sistema implementado. No \autoref{ch:conclusoesTrabalhoFuturo} (\nameref{ch:conclusoesTrabalhoFuturo}) e último, apresentadas as conclusões que resultaram da execução do trabalho e são indicadas as perspetivas de trabalho futuras. O projeto \texttt{WaterSpy} encontra-se no repositorio \url{https://github.com/rafaelds18/waterspy} \cite{WaterSpy}.
+
+
+%No \autoref{ch:ferramentaModelacao} (\nameref{ch:ferramentaModelacao}) é descrita a ferramenta e as linguagens utilizadas para a modelagem do sistema. 
+
+
+%Esta dissertação está organizada em cinco capítulos e dois anexos.
+%No segundo capítulo, é descrito o estado da arte, enunciando aspetos gerais associados ao carpooling, enumerando os sistemas julgados oportunamente mais relevantes e terminando com um resumo comparativo.
+%No terceiro capítulo, especifica-se a arquitetura proposta para conceber o agregador de sistemas de boleias detalhando os requisitos suportados.
+%No quarto capítulo, dedicado à avaliação experimental, apresenta-se o demonstrador, os cenários de avaliação assim como os resultados esperados e obtidos.
+%No quinto capítulo, o último, são referidas: a situação atual, as perspetivas de investigação futuras e as considerações finais.
+%No anexo A, é descrita a interface de serviços do SB de referência.
+%No anexo B, é descrita a interface de serviços da gateway de agregação.
+
+%%________________________________________________________________________
+\chapter{Trabalho Relacionado}
+\label{ch:trabalhoRelacionado}
+%%________________________________________________________________________
+%
+%Trabalho relacionado aqui \ldots
+%
+%Aqui terá certamente necessidade de citar (fazer referência) a vários trabalhos anteriormente publicados e que foi analisando ao longo de todo o seu projecto. Esses trabalhos devem ser apresentados com os seguintes objectivos essenciais:
+%\begin{itemize}
+%\item
+%delimitar o contexto onde o seu projecto se insere,
+%
+%\item
+%definir claramente os aspectos diferenciadores (inovadores) do seu projecto,
+%
+%\item
+%identificar e caracterizar os pressupostos (teóricos ou tecnológicos) em que o projecto se baseia.
+%\end{itemize}
+%
+%Cada trabalho a que fizer referência precisa de ser correctamente identificado. Essa identificação depende do tipo de publicação do trabalho. Um trabalho terá sido publicado em revista científica, \eg, \cite{Elzinga_Mills_2011}, outro em acta de conferência internacional, \eg, \cite{Boutilier_et_al_1995}, outro em livro, \eg, \cite{Bellifemine_et_al_2007}, ou apenas em capítulo de livro, \eg, \cite{Wooldridge_2000}, ou pode ainda incluído numa colecção, \eg, \cite{Howard_Matheson_1984} e há também a hipótese de ser uma \aspas{publicação de proveniência diversa}, como no caso em que o \aspas{o sítio na Internet} é a principal forma de publicação, \eg, \cite{Python_2012} e, por fim, a publicação pode ser um relatório técnico, \eg, \cite{Marin_2006}.
+%
+%Para conseguir lidar de forma adequada com as referências é importante construir um acervo e ter um mecanismo para geração automática (e correcta) das referências que vai fazendo ao longo do texto.
+%
+%Actualmente, as publicações têm também informação sobre o modo como devem ser correctamente citadas; em geral essa informação segue o formato \textsc{Bib}\TeX.
+%
+%Para fazer referência a um trabalho é necessário seguir as boas regras (sintácticas) para uma citação correcta, mas isso não é suficiente; falta a \aspas{semântica}. Ou seja, é também preciso descrever o essencial do trabalho que está a citar. É necessário explicar esse trabalho e enquadrá-lo, no texto, de modo a tornar clara a relação entre esse trabalho e o seu projecto.
+
+Neste capitulo será apresentado na \autoref{sec:enquadramento} o enquadramento das contagens de consumos, na \autoref{sec:sistemasSemelhantes} apresentam-se os sistemas semelhantes e na \autoref{sec:magicDraw} apresenta-se a ferramenta que foi utilizada para a modelação do sistema informático.
+
+\section{Equipamentos de Leitura}
+\label{sec:enquadramento}
+Os serviços de eletricidade, gás e água são fornecidos por empresas próprias, e são estas empresas que colocam contadores no local de consumo para que estes serviços possam ser medidos. Para este projeto iremos abordar apenas o serviço de consumo de águas e os seus contadores.
+%Os serviços de eletricidade pela \texttt{EDP} (Energias de Portugal), os serviços de gás pela \texttt{GALP} e os serviços de água são tipicamente da responsabilidade dos serviços municipalizados \texttt{(ex: Serviços Municipalizados de Água e Saneamento)}.
+%A própria entidade coloca contadores no local de consumo para que estes serviços possam ser medidos. 
+Os contadores de água são um instrumento de medição concebido para, de forma contínua, registar e indicar o volume de água que passa através dele.
+
+%Neste projeto vamos focar-nos nos consumos de água, sendo importante analisar melhor os contadores de água.
+Na \autoref{fig:contadorAgua} apresenta-se um contador de água em que sinalizado por um retângulo verde está o valor total de água que já foi contabilizado por este contador sendo que para efeitos de contagem apenas se utilizam os valores da zona a preto. O retângulo azul indica o ano e número de série do contador. 
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=10cm]{Imagens/contador-de-agua-janz.jpg}
+	\caption{Contador de água}
+	\label{fig:contadorAgua}
+\end{figure}
+
+Existem diversos tipos de contadores de água: contadores de água residenciais e industriais, volumétricos, monojato, multijato, húmidos e secos, mecânicos, magnéticos e inteligentes. Cada um destes tipos tem as suas próprias características sendo que diferem no tipo de serviço para que são utilizados ou diferem na forma como fazem o registo dos consumos de água. 
+
+Dentro destes tipos de contadores, podemos efetuar uma divisão em dois grupos, os de leitura manual e os inteligentes.
+Um contador inteligente (ou \textit{smart meter}) é um contador que regista a água consumida em pequenos intervalos de tempo e se este estiver em telecontagem (ou telegestão) garante um conjunto de benefícios ao cliente, tais como o envio automático de leituras ou a faturação do consumo de água sem estimativas. Em contrapartida, os contadores manuais exigem que a empresa fornecedora envie um funcionário para fazer as leituras ou faça estimativas dos valores consumidos.
+
+%Apesar de os contadores inteligentes serem automatizados e melhores tanto para a entidade fornecedora como para o cliente, existem em menor quantidade e ainda é muito dispendioso para as entidades removerem os contadores antigos por estes novos em todos os clientes.
+Os contadores inteligentes são automatizados e melhores tanto para a empresa fornecedora como para o cliente. No entanto, ainda se torna muito dispendioso para as empresas fornecedoras destes serviços removerem os contadores antigos dos seus clientes por estes inteligentes e por isso existem em menor quantidade.
+
+
+%Com a vasta variedade de contadores, são mais os contadores de leitura manual do que inteligentes, que os consumidores têm. 
+%
+%Os contadores com sistemas inteligentes apesar de serem mais automatizados a nível de registo e envio da leitura para as entidades existem ainda em número escasso, acabando por existir mais dos manuais. Para que todos os consumidores possam mudar de contadores de leitura manual para inteligente levará vários anos. 
+
+%\textbf{No caso dos contadores manuais, os consumidores têm que ter o compromisso de ir verificar a leitura e comunicar a mesma à entidade, seja por via de chamada ou por web. Este processo pode tornar-se fastidioso, e por consequência o próprio consumidor acaba por muitas vezes esquecer-se de enviar a leitura para a entidade.} %Obrigando a entidade a calcular uma estimativa do consumo, usando por exemplo de a seguinte fórmula:
+%
+%\begin{equation}
+%Consumo\: M\acute{e}dio\: Di\acute{a}rio = \dfrac{Consumo\:entre\:2\: leituras}{nº\: dias} 
+%\end{equation} 
+%
+%
+%\begin{equation}
+%Consumo\:Estimado = Consumo\:M\acute{e}dio\:Di\acute{a}rio \times nº\: dias\:a\:estimar 
+%\end{equation} 
+%
+%%$ Consumo Estimado = Consumo Médio Diário \times nº dias a estimar $
+%%Consumo Médio Diário = Consumo entre 2 leituras / nº dias
+%
+%%Consumo Estimado = Consumo Médio Diário × nº dias a estimar
+%\textbf{O consumo estimado pela entidade pode ser superior ao consumo real, obrigando o consumidor a enviar uma nova leitura o que resulta a entidade no mês seguinte ter de devolver a diferença do valor anterior.}
+%O consumo estimado por vezes pode ser muito superior ao consumo real, obrigando assim o consumidor a pagar mais do que aquilo consumido.
+
+\section{Soluções Semelhantes}
+\label{sec:sistemasSemelhantes}
+Nesta secção são apresentadas algumas soluções que se relacionam com o sistema a implementar. 
+Atualmente existem algumas soluções criadas para os mais diferentes dispositivos móveis e/ou web, algumas delas tendo como objetivo comum facilitar o processo de envio leituras de água. Algumas dessas soluções são apresentadas nas subsecções seguintes.
+
+%\subsection{Aplicações Móveis}
+%\label{subsec:appMoveisRelacionadas}
+%Nesta subsecção é apresentada as várias aplicações móveis que se assemelham à solução a implementar referidas na \autoref{subsubsec:leituraContadores}, \autoref{subsubsec:eyeOnWater} e \autoref{subsubsec:myAqua}.
+%\subsection{Leitura de contadores de água, luz e gás}
+%\label{subsec:leituraContadores}
+A solução ``Leitura de contadores de água, luz e gás'' \cite{Leitura_Contadores_2017}, foi desenvolvida para os principais serviços de consumos básicos (água, eletricidade e gás). Permite o controle dos consumos e efetuar leituras dos contadores através da câmara do dispositivo. Esta é uma solução que não tem interação com nenhuma empresa pois ela só têm um propósito guardar dados para o consumidor ter um histórico dos seus consumos.
+% Esta solução também permite ao consumidor ser alertado de possíveis fugas.
+%\textbf{Em suma, comparando esta aplicação com o sistema SpyWater, são muito idênticas no que possibilitam fazer, mas com a vantagem que o SpyWater permite o envio de leituras para a entidade fornecedora, mas só opera nos consumos de água não permite leituras de eletricidade e ou gás.}
+%\subsection{EyeOnWater}
+%\label{subsubsec:eyeOnWater}
+
+A solução ``EyeOnWater'' \cite{EyeOnWater_2016} foi desenvolvida para todos os consumidores de serviços de água, dentro dos códigos postais suportados pela mesma, isto é, de acordo com a documentação desta solução os códigos postais suportados pela a solução pertencem aos \texttt{E.U.A} não se sabe exatamente quais os estados ou cidades que esta solução suporta, esta solução depende assim muito da localização do contador, do consumidor, para o registo solução. Esta solução conta com as funcionalidades de entrar em contacto com o fornecedor de água, têm a possibilidade registar os consumos diários, notificar de possíveis fugas e de efetuar comparações se está a consumir água em excesso. Como a solução depende da localização para o registo, torna-se muito restrita enquanto a empresas fornecedoras de água que comunica. Esta solução não permite o envio de leituras.
+
+%\textbf{Em suma, comparando esta aplicação com o sistema SpyWater, são muito idênticas no que possibilitam fazer, mas com a vantagem que o SpyWater permite o envio de leituras para a entidade fornecedora.}
+%
+%\begin{figure}[!ht]
+%      \centering
+%      \includegraphics[width=5cm]{Imagens/Apps/android_homepage_eyeonwater.pdf}
+%      \caption{Ecrã Principal}
+%      \label{fig:teste}
+%\end{figure}
+
+%\subsection{myAqua}
+%\label{subsubsec:myAqua}
+A solução ``myAQUA'' \cite{myAqua_2014} foi desenvolvida para todos os consumidores de serviços de água fornecidos pela Empresa Portuguesa de Águas Livres e pelas a empresas associadas a ela. Esta solução permite consultar faturas, assim como comunicar anomalias, receber alertas e comunicar leituras inserindo manualmente os valores.
+%\textbf{Em suma, comparando esta aplicação com o sistema SpyWater, são muito idênticas no que possibilitam fazer as mesma funcionalidades com a exceção de ver faturas, mas a grande vantagem que o SpyWater tem é ser construído para poder enviar leituras para qual quer entidade fornecedora que queira integrar com o sistema, não ser exclusivo para uma entidade só e segundo os comentários na ?play store? o ?myAqua ? contem uma interface complexa, algo que o SpyWater tem objetivo de ter uma interface gráfica simples e não complexa.}
+%\section{Aplicações Web e Móveis}
+%\label{subsec:appWebMoveisRelacionadas}
+%Nesta subsecção é apresentada as várias aplicações web que se assemelham à solução a implementar, referidas na \autoref{subsubsec:aguasPorto} e \autoref{subsubsec:smasAlmada}.
+%\subsection{Águas do Porto}
+%\label{subsubsec:aguasPorto}
+
+A solução web e aplicação para telemóvel das ``Águas do Porto'' \cite{Aguas_Porto_2016} foi desenvolvida para todos os consumidores de serviços de água da cidade do Porto. Esta solução permite ao consumidor acompanhar os seus consumos, receber alertas de possíveis fugas, notificações e avisos da empresa como dar o conhecimento da qualidade da água aos consumidores, é também possível comunicar as leituras através da web e por aplicação móvel via câmara ou inserindo manualmente os valores.
+%
+%\begin{figure}[!ht]
+%    \centering
+%    {{\includegraphics[width=5cm]{Imagens/Apps/android_comunicar_leitura_aguas_do_porto.png} }}
+%    \qquad
+%    {{\includegraphics[width=5cm]{Imagens/Apps/web_comunicar_leitura_aguas_do_porto.png} }}
+%    \caption{Ecrãs comunicar leituras em versão android e web}
+%    \label{fig:ecra_aguas_porto}
+%\end{figure}
+
+%\subsection{SMAS Almada}
+%\label{subsubsec:smasAlmada}
+A solução web e aplicação para telemóvel do ``SMAS Almada'' \cite{SMAS_Almada_2015} foi desenvolvida para todos os consumidores de serviços de água da cidade de Almada. Esta solução permite ao consumidor o envio de leituras a empresas através da página web e por aplicação móvel. A comunicação da leitura por aplicação móvel, só permite a inserção dos dados da leitura manualmente não têm uso da câmara do telemóvel.
+
+%\section{Soluções Semelhantes}
+%\label{sec:sistemasSemelhantes}
+%Nesta secção são apresentadas algumas soluções que se relacionam com a solução a implementar. Existem várias aplicações móveis e web que tem como objetivo como comum facilitar o processo de envio leituras de água, essas aplicações são apresentadas nas subsecções \autoref{subsec:appMoveisRelacionadas}, \autoref{subsec:appWebMoveisRelacionadas} e \autoref{subsec:appWebRelacionadas}.
+%
+%\subsection{Aplicações Móveis}
+%\label{subsec:appMoveisRelacionadas}
+%Nesta subsecção é apresentada as várias aplicações móveis que se assemelham à solução a implementar referidas na \autoref{subsubsec:leituraContadores}, \autoref{subsubsec:eyeOnWater} e \autoref{subsubsec:myAqua}.
+%
+%\subsubsection{Leitura de contadores de água, luz e gás}
+%\label{subsubsec:leituraContadores}
+%A aplicação "Leitura de contadores de água, luz e gás" \cite{Leitura_Contadores_2017}, foi desenvolvida para os principais serviços de consumos básicos (água, eletricidade e gás), permite o controle dos consumos e efetuar leituras dos contadores. Esta aplicação permite também ao consumidor ser alertado de possíveis fugas. 
+%%\textbf{Em suma, comparando esta aplicação com o sistema SpyWater, são muito idênticas no que possibilitam fazer, mas com a vantagem que o SpyWater permite o envio de leituras para a entidade fornecedora, mas só opera nos consumos de água não permite leituras de eletricidade e ou gás.}
+%
+%\subsubsection{EyeOnWater}
+%\label{subsubsec:eyeOnWater}
+%A aplicação "EyeOnWater" \cite{EyeOnWater_2016} foi desenvolvida para todos os consumidores de serviços de água, dentro dos códigos postais suportados pela mesma, isto é, esta aplicação depende muito de onde o consumidor tem o seu contador de água pois ela permite entrar em contacto com o fornecedor de água, para além de fazer isto tem a possibilidade registar os consumos diários, notificar de possíveis fugas e de efetuar comparações se está a consumir muito ou pouca água. 
+%%\textbf{Em suma, comparando esta aplicação com o sistema SpyWater, são muito idênticas no que possibilitam fazer, mas com a vantagem que o SpyWater permite o envio de leituras para a entidade fornecedora.}
+%
+%\subsubsection{myAqua}
+%\label{subsubsec:myAqua}
+%A aplicação "myAQUA" \cite{myAqua_2014} foi desenvolvida para todos os consumidores de serviços de água fornecidos pela Empresa Portuguesa de Águas Livres e pelas a entidades associadas a ela, esta aplicação permite consultar faturas, assim como comunicar anomalias, recebe alertas e comunica leituras.
+%%\textbf{Em suma, comparando esta aplicação com o sistema SpyWater, são muito idênticas no que possibilitam fazer as mesma funcionalidades com a exceção de ver faturas, mas a grande vantagem que o SpyWater tem é ser construído para poder enviar leituras para qual quer entidade fornecedora que queira integrar com o sistema, não ser exclusivo para uma entidade só e segundo os comentários na ?play store? o ?myAqua ? contem uma interface complexa, algo que o SpyWater tem objetivo de ter uma interface gráfica simples e não complexa.}
+%
+%\subsection{Aplicações Web e Móveis}
+%\label{subsec:appWebMoveisRelacionadas}
+%Nesta subsecção é apresentada as várias aplicações web que se assemelham à solução a implementar, referidas na \autoref{subsubsec:aguasPorto} e \autoref{subsubsec:smasAlmada}.
+%
+%
+%\subsubsection{CM-Funchal}
+%\label{subsubsec:cmFunchal}
+A solução ``CM-Funchal'' \cite{CM_Funchal} permite ao consumidor que reside na cidade do Funchal ou que contenha uma habitação no local a comunicação da leitura do seu contador de água.
+
+
+%%________________________________________________________________________
+%\chapter{Ferramenta utilizada para modelação}
+%\label{ch:ferramentaModelacao}
+%%%________________________________________________________________________
+%Neste capitulo apresenta-se a ferramenta utilizada para a modelação do modelo proposto. Na \autoref{sec:magicDraw} apresenta-se a ferramenta de modelagem utilizada e na \autoref{sec:sysml} apresenta-se a linguagem para a modelação utilizada e na \autoref{sec:cameo} apresenta-se a linguagem utilizada para modelar a base de dados.
+
+\section{MagicDraw}
+\label{sec:magicDraw}
+Neste secção apresenta-se a ferramenta utilizada para a modelação do modelo proposto.
+MagicDraw é uma ferramenta de modelagem \textit{Unified Modeling Language} (\texttt{UML}), \textit{Systems Modeling Language} (\texttt{SysML}), \textit{Business Process Model and Notation} (\texttt{BPMN}) e \textit{Unified Profile for (DoDAF)/(MODAF)} (\texttt{UPDM}) onde \textit{Department of Defense Architecture Framework} (\texttt{DoDAF}) e \textit{Ministry of Defence Architecture Framework} (\texttt{MODAF}) visual com suporte de colaboração em equipa. Projetada para analistas de negócios, analistas de software, programadores e engenheiros de controle de qualidade, esta ferramenta de desenvolvimento dinâmica e versátil facilita a análise e o projeto de sistemas e bases de dados orientados a objetos \textit{Object-oriented} (\texttt{OO}).
+% Ele fornece o mecanismo de engenharia de código (com suporte completo para J2EE, C #, C ++, linguagens de programação CORBA IDL, .NET, XML Schema, WSDL), bem como modelagem de esquema de banco de dados, geração de DDL e recursos de engenharia reversa. 
+
+\subsection{Linguagem SysML}
+\label{sec:sysml}
+No contexto deste projeto utilizou-se a linguagem \textit{Systems Modeling Language} (\texttt{SysML}) que foi projetada para unificar as diversas linguagens de modelagem usadas atualmente por engenheiros de sistema. O \texttt{SysML} oferece suporte às especificações, análises, projetos, verificações e validações de uma ampla gama de sistemas complexos. O \texttt{SysML} suporta uma vasta gama de diagramas tais como Casos de Uso, Requisitos e Atividade. 
+O Diagrama de Caso de Uso descreve os serviços fornecidos pelo sistema, bem como os utilizadores que utilizarão esses serviços. 
+O Diagrama de Requisitos descreve os requisitos do sistema, incluindo um \texttt{id} e um texto como propriedades. O diagrama pode ter propriedades definidas pelo utilizador e categorias, tais como \texttt{Funcional} e \texttt{Não Funcional}.
+O Diagrama de Atividade descreve as atividades que um bloco do diagrama de Casos de Uso pode conter. As atividades representam a sequência de passos da descrição de um requisito, em que mostra os passos para a sua realização e finalização.
+Para este projeto, esta linguagem foi utilizada para modelar a arquitetura lógica do sistema, os casos de utilização, os diagramas de atividades e modelo de dados Entidade Associação usando os diagramas mencionados.  
+
+\subsection{Modelo de Dados Cameo}
+\label{sec:cameo}
+O plugin Cameo Data Modeler fornece modelagem relacionada a dados para o MagicDraw. Inclui recursos de modelagem de relacionamento com entidades, base de dados e esquema \textit{Extensible Markup Language} (\texttt{XML}) \cite{Advanced_Data_Modeling}.
+Este plugin permite desenhar diagramas de relação de entidade (usando a notação do pé de galo) \cite{Crows_Foot_Notation}. Esta é uma variante completa do diagrama \textit{Entity Relationship model} (\texttt{ER model}) (incluindo conceitos estendidos de relação de entidade - como generalização), fornecendo um espectro de recursos para modelagem lógica de dados.
+Neste projeto, este modelo foi utilizado para modelar o diagrama de entidade associação da base de dados. 
+%%________________________________________________________________________
+\chapter{Análise do Problema}
+\label{ch:modeloProposto}
+%%________________________________________________________________________
+
+Neste capitulo apresenta-se a análise do problema. Na \autoref{sec:arquiteturaDoSistema} apresenta-se a arquitetura lógica do sistema, na \autoref{sec:requisitos} apresentam-se os requisitos do sistema e na \autoref{sec:casosUtilizacao} apresentam-se os casos de utilização.
+
+\section{Arquitetura Lógica do Sistema}
+\label{sec:arquiteturaDoSistema}
+A \autoref{fig:arquiteturaDoSistema} apresenta a arquitetura lógica do sistema informático implementado no contexto deste projeto e descreve a organização lógica do sistema, bem como os elementos que o compõem. 
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=\textwidth]{Imagens/Arquitetura/ArquiteturaSistema.pdf}
+	\caption{Arquitetura Lógica do Sistema}
+	\label{fig:arquiteturaDoSistema}
+\end{figure}
+
+O nosso sistema informático é constituído por três elementos: a \texttt{Interface Com o Utilizador}, o \texttt{Servidor} e o \texttt{Sistema de Gestão de Base Dados}. A \texttt{Interface Com o Utilizador} representa o ambiente gráfico com que o utilizador irá interagir e executar as ações que o sistema permite. O \texttt{Servidor} representa toda a parte lógica do sistema, é onde se efetuam todas as comunicações com o \texttt{Sistema de Gestão de Base Dados} para gravar dados ou obter dados e envia as respostas com esses dados previamente tratados para a \texttt{Interface Com o Utilizador}. O \texttt{Sistema de Gestão de Base Dados} representa um sistema que contem a Base Dados e as tabelas necessária para o funcionamento do sistema \texttt{WaterSpy}. O \texttt{Sistema de Gestão de Consumos} representa, o sistema informático das empresas fornecedoras do serviço de água, que irá comunicar com o nosso sistema informático. No nosso projeto vamos criar um sistema, que simule este elemento, pelo motivo de não ter nenhuma empresa integrada com o sistema \texttt{WaterSpy}. 
+%Para questões de teste, o elemento \texttt{Sistema de Gestão de Consumos} será simulado, neste projeto, pelos motivos, de nenhum sistema real estar integrado com o sistema \texttt{WaterSpy}.
+
+%%________________________________________________________________________
+\section{Requisitos do Sistema}
+\label{sec:requisitos}
+%%________________________________________________________________________
+
+Nesta secção apresentam-se os requisitos necessários para implementação do sistema informático \texttt{WaterSpy}. Os requisitos (funcionais e não funcionais) definem o que um sistema deve fazer e sob que restrições. 
+Os requisitos funcionais definem uma função de um sistema de software, representam o que o software faz, em termos de tarefas e serviços.
+Os requisitos não funcionais estão relacionados com a qualidade do serviço prestado pelo sistema, incluindo características como desempenho, disponibilidade, níveis de segurança, portabilidade, privacidade, consumo de memória e disco, dentre outros. Ou seja, os requisitos não-funcionais definem restrições ao funcionamento do sistema. 
+
+Na \autoref{subsec:requisitosFuncionais} são apresentados os requisitos funcionais e na \autoref{subsec:requisitosNaoFuncionais} os requisitos não funcionais.
+\subsection{Requisitos Funcionais}
+\label{subsec:requisitosFuncionais}
+
+Nesta secção são apresentados os requisitos funcionais do sistema \texttt{WaterSpy} na \autoref{subsubsec:requisitosSistema} e do \texttt{Sistema de Gestão de Consumos} na \autoref{subsubsec:requisitosDoSMAA}.
+
+\subsubsection{Requisitos do Sistema}
+\label{subsubsec:requisitosSistema}
+A \autoref{tab:reqFuncSistema} apresenta os requisitos funcionais do sistema.
+\begin{table}[ht!]
+\caption{Requisitos Funcionais do Sistema}
+\label{tab:reqFuncSistema}
+   \centering
+   \begin{tabular}{l l}
+   	  \hline \hline
+   	  Requisito & Descrição
+   	  \\
+      \hline \hline
+      \textit{RF 1} & \textit{Subscrever}
+      \\
+      \textit{RF 2} & \textit{Autenticar}
+      \\ 
+      \textit{RF 2.1} & \textit{Validar autenticação}
+      \\ 
+      \textit{RF 3} & \textit{Registar}
+      \\ 
+      \textit{RF 3.1} & \textit{Associar contratos}
+      \\ 
+      \textit{RF 3.2} & \textit{Registar manualmente ou por fotografia o contador}
+      \\ 
+      \textit{RF 3.3} & \textit{Validar registo do contador por contrato}
+      \\ 
+      \textit{RF 3.4} & \textit{Registar leituras}
+      \\ 
+      \textit{RF 4} & \textit{Consultar}
+      \\ 
+      \textit{RF 4.1} & \textit{Consultar histórico de leituras}
+      \\
+      \hline \hline
+   \end{tabular}
+\end{table}
+
+
+O requisito \texttt{RF 1} representa a subscrição do utilizador no nosso sistema para que seja criada uma conta para o mesmo.
+O requisito \texttt{RF 2} representa a autenticação onde o sistema vai verificar os dados que foram subscritos no sistema e validar os mesmos (requisito \texttt{RF 2.1}), reconhecendo o utilizador que está a autenticar-se, pode assim usufruir das restantes funcionalidades do sistema.
+O requisito \texttt{RF 3} representa o registo, função do sistema que dá origem a vários sub-requisitos, os sub-requisitos originados é onde o sistema vai associar contratos dos consumidores (requisito \texttt{RF 3.1}), registar o contador (requisito \texttt{RF 3.2}) e registar as leituras a serem enviadas (requisito \texttt{RF 3.3}) para o Sistema de Gestão de Consumos.
+
+A associação de contratos (requisito \texttt{RF 3.1}) representa onde o consumidor pode associar o contrato ou contratos que tem com a empresa à sua conta do sistema. O registo do contador (requisto \texttt{RF 3.2}) pode ser feito manualmente ou por meio de uma fotografia que o próprio consumidor tira ao valor que se encontra no contador, esses dados serão validados (requisito \texttt{RF 3.3}) e gravados no \texttt{Sistema de Gestão de Base Dados}. 
+
+
+A \autoref{tab:reqFuncSistemaLeituras} apresenta em detalhe os requisitos funcionais sobre o registo das leituras (requisito \texttt{RF 3.4}) que se faz de forma idêntica ao caso anterior sendo que se os dados forem válidos para além de serem gravados serão também enviados à respetiva empresa onde é feita a atualização do valor dos consumos (requisito \texttt{RF 3.4.4}).
+
+\begin{table}[ht!]
+\caption{Requisitos Funcionais do Sistema - Registar Leituras}
+\label{tab:reqFuncSistemaLeituras}
+   \centering
+   \begin{tabular}{l l}
+      \hline \hline
+   	  Requisito & Descrição
+   	  \\
+      \hline \hline
+      \textit{RF 3.4.1} & \textit{Leitura das contagens dos contadores por fotografia}
+      \\ 
+      \textit{RF 3.4.2} & \textit{Enviar leitura dos contadores}
+      \\ 
+      \textit{RF 3.4.3} & \textit{Validar valor da leitura}
+      \\ 
+      \textit{RF 3.4.4} & \textit{Actualizar os consumos após envio de leitura}
+      \\
+      \hline \hline
+   \end{tabular}
+\end{table}
+
+\subsubsection{Requisitos do Sistema de Gestão de Consumos}
+\label{subsubsec:requisitosDoSMAA}
+A \autoref{tab:reqFuncSistemaConsumos} apresenta os requisitos funcionais do sistema de gestão de consumos. 
+\begin{table}[ht!]
+\caption{Requisitos Funcionais do Sistema - Gestão de Consumos}
+\label{tab:reqFuncSistemaConsumos}
+   \centering
+   \begin{tabular}{l l}
+      \hline \hline
+   	  Requisito & Descrição
+   	  \\
+      \hline \hline
+      \textit{RF\textsubscript{SGC} 1} & \textit{Enviar Notificações}
+      \\ 
+      \textit{RF\textsubscript{SGC} 1.1} & \textit{Notificar os indicadores de consumos ao cliente}
+      \\ 
+      \textit{RF\textsubscript{SGC} 1.2} & \textit{Notificar a existência de eventos}
+      \\ 
+      \textit{RF\textsubscript{SGC} 2} & \textit{Processar Leituras}
+      \\
+      \hline \hline
+   \end{tabular}
+\end{table}
+O requisito \texttt{RF\textsubscript{SGC} 1} dá origem a dois sub-requisitos em que o sistema tem de notificar os indicadores dos consumos ao cliente (requisito \texttt{RF\textsubscript{SGC} 1.1}) e tem de notificar a existência de eventos ao cliente (requisito \texttt{RF\textsubscript{SGC} 1.2}), isto é, quando o sistema tem de notificar os indicadores dos consumos ao cliente trata-se de notificar as estimativas do consumo feito ao cliente, o notificar a existência de eventos trata-se de notificar o pedido de enviar a leitura, leitura incorreta.
+
+\subsection{Requisitos n\~{a}o Funcionais}
+\label{subsec:requisitosNaoFuncionais} 
+Nesta secção são apresentados os requisitos não funcionais de todo o sistema na \autoref{subsubsec:requisitosNaoFuncionaisSistema} e do servidor na \autoref{subsubsec:requisitosNaoFuncionaisServidor}.
+
+\subsubsection{Requisitos n\~{a}o Funcionais do Sistema}
+\label{subsubsec:requisitosNaoFuncionaisSistema}
+A \autoref{tab:reqNaoFuncSistema} apresenta os requisitos não funcionais do sistema.
+\begin{table}[h]
+\caption{Requisitos não Funcionais do Sistema}
+\label{tab:reqNaoFuncSistema}
+   \centering
+   \begin{tabular}{l l}
+      \hline \hline
+   	  Requisito & Descrição
+   	  \\
+      \hline \hline
+      \textit{RnF 1} & \textit{Proteção de dados}
+      \\ 
+      \textit{RnF 2} & \textit{Compatibilidade de dispositivos}
+      \\
+      \textit{RnF 3} & \textit{Integrabilidade}
+      \\
+      \textit{RnF 4} & \textit{Usabilidade}
+      \\
+      \hline \hline
+   \end{tabular}
+\end{table}
+O requisito \texttt{RnF 1} representa que os dados devem ser protegidos, isto é, garantir que todos os dados passados por comunicação são cifrados e que todos os dados guardados num \texttt{Sistema de Gestão de Base Dados} com acesso a informação privilegiada só são acedidos por administradores do sistema e que esses dados mais críticos sejam também cifrados. O sistema tem de garantir a compatibilidade com todos os dispositivos (requisito \texttt{RnF 2}), e também ser possível integrar com outros sistemas externos como os das empresas (requisito \texttt{RnF 3}). Por último deve ter uma interface gráfica que cumpra as normas de usabilidade de modo a garantir que a interface seja de fácil uso e eficaz para o utilizador (requisito \texttt{RnF 4}).
+
+\subsubsection{Requisitos n\~{a}o Funcionais do Servidor}
+\label{subsubsec:requisitosNaoFuncionaisServidor}
+A \autoref{tab:reqNaoFuncServidor} apresenta os requisitos não funcionais do servidor.
+\begin{table}[h]
+\caption{Requisitos não Funcionais do Servidor}
+\label{tab:reqNaoFuncServidor}
+   \centering
+   \begin{tabular}{l l}
+      \hline \hline
+   	  Requisito & Descrição
+   	  \\
+      \hline \hline
+      \textit{RnF\textsubscript{Serv} 1} & \textit{Arquitetura modular}
+      \\ 
+      \textit{RnF\textsubscript{Serv} 2} & \textit{Testes unitários}
+      \\ 
+      \textit{RnF\textsubscript{Serv} 3} & \textit{Comunicação feita no sistema}
+      \\
+      \hline \hline
+   \end{tabular}
+\end{table}
+
+O servidor é composto por uma arquitetura modular (requisito \texttt{RnF\textsubscript{Serv} 1}), ou seja, garantir que todo a arquitetura do código presente no servidor é composta por funções/métodos abstratos e classes abstratas de modo que seja possível serem utilizados por outros sistemas, é composto por testes unitários (requisito \texttt{RnF\textsubscript{Serv} 2}), testes que vão cobrir todo o código de modo a garantir que não existem erros e é composto pela comunicação no sistema (requisito \texttt{RnF\textsubscript{Serv} 3}) que deve ser feita via \textit{Representational State Transfer} (\texttt{REST}) através de mensagens do tipo \textit{JavaScript Object Notation} (\texttt{JSON}).
+
+\section{Casos de Utilização}
+\label{sec:casosUtilizacao}
+
+Nesta secção são apresentados os casos de utilização do sistema. Na \autoref{subsec:subscricao_autenticacao} apresenta-se o caso de utilização de subscrição e autenticação, na \autoref{subsec:registos_contratos_contadores} apresenta-se o caso de utilização de registos de contratos e de contadores, na \autoref{subsec:visualizar_info_utilizador} apresenta-se o caso de utilização de visualizar informação do utilizador, na \autoref{subsec:visualizar_info_admin} apresenta-se o caso de utilização de visualizar informação do administrador e na \autoref{subsec:envio_notificacoes} apresenta-se o caso de utilização envio de notificações. 
+
+Os casos de utilização representam a interação entre um actor (seja Humano ou não Humano) e o sistema. Cada caso de utilização tem uma descrição da funcionalidade que será construída no sistema. Um caso de utilização pode "incluir" outra funcionalidade de caso de utilização ou "estender" outro caso de utilização com seu próprio comportamento.
+
+%Nesta secção são apresentados os casos de utilização do sistema. Os casos de utilização representam a interação entre um actor (seja Humano ou não Humano) e o sistema. Cada caso de utilização tem uma descrição da funcionalidade que será construída no sistema. Um caso de utilização pode "incluir" outra funcionalidade de caso de utilização ou "estender" outro caso de utilização com seu próprio comportamento.
+
+\subsection{Subscrição e Autenticação}
+\label{subsec:subscricao_autenticacao}
+A \autoref{fig:uc_autenticacao} apresenta a \texttt{Subscrição} e a \texttt{Autenticação} dos utilizadores no sistema, tem-se como atores o \texttt{Utilizador} e a generalização deste em dois outros: o \texttt{Consumidor} e o \texttt{Administrador} que têm tipos de autenticação diferentes o que lhes vai permitir acesso a diferentes funcionalidades do sistema.
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=8.5cm]{Imagens/Casos/uc_autenticacao.pdf}
+      \caption{Casos de Utilização - Subscrição e Autenticação}
+      \label{fig:uc_autenticacao}
+\end{figure}
+
+\newpage
+A \autoref{fig:act_subscricao} descreve o diagrama de atividades que permite ao utilizador a criação de uma conta para aceder ao sistema. 
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=9cm]{Imagens/Atividades/act_subscricao.pdf}
+      \caption{Diagrama de Atividades - Subscrição}
+      \label{fig:act_subscricao}
+\end{figure}
+
+O diagrama apresenta o processo de \texttt{Subscrição} que começa com a atividade \texttt{Inserir Dados} onde o utilizador insere os dados pedidos. Após a atividade anterior passa-se para a seguinte \texttt{Validar dados inseridos}, em que caso os dados sejam inválidos volta-se ao ponto inicial caso contrário passa para atividade seguinte \texttt{Regista na BD}. Nesta atividade os dados são armazenados na base de dados e assim termina a \texttt{Subscrição}.
+
+No \autoref{sec:act_autenticacao} encontra-se o diagrama de atividades que descreve o processo que é feito para que o utilizador se possa autenticar após a subscrição já descrita.
+
+\subsection{Registos de Contratos e Contadores}
+\label{subsec:registos_contratos_contadores}
+Nesta seção apresentam-se os casos de utilização relacionados com os registos que podem ser efetuados no sistema. Vão ser apresentados dois tipos de atores o \texttt{Consumidor}, que se encontra na forma de um boneco para representar que é um ser humano a interagir, enquanto que o outro ator \texttt{Sistema de Gestão de Base  de Dados} está em forma de bloco, porque retrata um sistema informático que gere a Base de Dados e/ou um ser humano a gerir a Base de Dados.
+
+Na \autoref{fig:uc_registo1} observamos a \texttt{Associação de contratos} que consiste num consumidor associar no sistema o(s) número(s) dos contratos ao qual tem um ou mais contadores associados. O registo de contadores representa 
+a ação do consumidor registar um contador manualmente ou por fotografia num contrato já associado, estando representado pela ligação ``\textit{extend}" no caso tirar fotografia ao contador. Por último temos o \texttt{Armazenar Dados} em que os casos \texttt{Associação de contratos} e \texttt{Registo de contadores} estão ligados a este, por uma ligação ``\textit{include}", significando que o caso \texttt{Armazenar Dados} terá sempre de acontecer quando os outros 2 casos se verificarem. O ator \texttt{Sistema Gestão de Base Dados} será o responsável por armazenar estes dados.
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=13cm]{Imagens/Casos/uc_registos1.pdf}
+      \caption{Casos de Utilização - Registos}
+      \label{fig:uc_registo1}
+\end{figure}
+
+\newpage
+Na \autoref{fig:uc_registo2} observamos o envio de leituras que é efetuado pelo consumidor após tirar fotografia ao valor da leitura no seu contador, assim que a leitura for enviada é executado o \texttt{Interpretar Leituras} e após isso as mesmas serão armazenadas algo que vai ser tratado pelo \texttt{Sistema Gestão de Base Dados}.
+
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=12cm]{Imagens/Casos/uc_registos2.pdf}
+      \caption{Casos de Utilização - Envio de Leituras}
+      \label{fig:uc_registo2}
+\end{figure}
+
+\newpage
+A \autoref{fig:act_tirarfoto} representa o diagrama de atividades para que o utilizador possa tirar fotografias ao leitor dos contadores.
+
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=9cm]{Imagens/Atividades/act_tirarfoto.pdf}
+      \caption{Diagrama de Atividades - Tirar fotografia ao contador}
+      \label{fig:act_tirarfoto}
+\end{figure}
+
+Na \autoref{sec:act_contadores} encontra-se o diagrama de atividades para efetuar o registo de contadores.
+
+\clearpage
+
+\subsection{Visualizar Informação do Utilizador}
+\label{subsec:visualizar_info_utilizador}
+A \autoref{fig:uc_info} apresenta os casos em que o consumidor pode visualizar as suas informações dentro do sistema tais como o histórico de leituras e os seus indicadores de consumos. E aqui também se apresenta o caso em que o consumidor pode editar o seu perfil.
+
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=10cm]{Imagens/Casos/uc_info.pdf}
+      \caption{Casos de Utilização - Visualizar Informação}
+      \label{fig:uc_info}
+\end{figure}
+
+\subsection{Visualizar Informação do Administrador}
+\label{subsec:visualizar_info_admin}
+A \autoref{fig:uc_info_admin} apresenta os casos em que o administrador pode visualizar informações sobre qualquer consumidor e gerir os seus perfis e o próprio.
+
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=10cm]{Imagens/Casos/uc_info_admin.pdf}
+      \caption{Casos de Utilização - Visualizar Informação Administrador}
+      \label{fig:uc_info_admin}
+\end{figure}
+
+\newpage
+\subsection{Envio de Notificações}
+\label{subsec:envio_notificacoes}
+Neste caso de utilização de envio de notificações \autoref{fig:uc_notificacoes}, demonstra-se a interação do sistema implementado com o sistema de gestão de consumos e o administrador.
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=13cm]{Imagens/Casos/uc_notificacoes.pdf}
+      \caption{Casos de Utilização - Envio de Notificações}
+      \label{fig:uc_notificacoes}
+\end{figure}
+
+Os casos presentes são o envio de notificações e o processar leituras, o caso de envio de notificações divide-se em três casos, o envio de eventos, envio de alerta para envio de leituras e envio de estimativas, isto quer dizer que existem três possíveis casos de envio de notificações quando o sistema de gestão de consumos ou administrador acedem a este elemento. Quando acedem ao envio de notificações existe uma ligação designada de extensão que significa que o elemento ao qual é estendido o comportamento realizado naquele elemento só é realizado se necessário, neste caso o processar leituras que tem o comportamento de receber as leituras provenientes do consumidor e interpretá-las.
+
+\newpage
+
+\section{\textit{Mockups} da Interface com o Utilizador}
+\label{subsec:ecrasInterfaceUtilizador}
+Nesta secção apresentam-se detalhadamente os vários ecrãs da interface com o utilizador.
+
+A \autoref{fig:login_registo} apresenta os primeiros ecrãs da nossa interface, o ecrã de \textit{login} (\autoref{subFig:login}) e registo de novos utilizadores (\autoref{subFig:registo}).
+
+\begin{figure}[!ht]
+    \centering
+    \subfloat[\centering Ecrã de \textit{Login} \label{subFig:login}]
+    {{\includegraphics[width=5cm]{Imagens/Ecras/login.pdf} }}
+    \qquad
+    \subfloat[\centering Ecrã de Registo \label{subFig:registo}]
+    {{\includegraphics[width=5cm]{Imagens/Ecras/register.pdf} }}    
+    \caption{Ecrãs de \textit{Login} e de Registo}
+    \label{fig:login_registo}
+\end{figure}
+
+No primeiro ecrã \autoref{subFig:login}, o utilizador pode inserir as suas credenciais que lhe darão acesso às funcionalidades do nosso sistema. Caso ainda não se tenha registado, pode aceder ao ecrã de registo \autoref{subFig:registo} que é onde o utilizador se pode registar com o seu email.
+
+\newpage
+%\clearpage
+Após o login efetuado com sucesso, o utilizador é encaminhado para o ecrã o principal apresentado na \autoref{fig:initial}.
+
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=5cm]{Imagens/Ecras/initial.pdf}
+      \caption{Ecrã Principal}
+      \label{fig:initial}
+\end{figure}
+
+Neste ecrã, o utilizador pode ver o valor do último consumo enviado e se está com consumos excessivos através de um indicador colorido. Considera-se um consumo excessivo valores que estejam acima da média de valores enviados até ao momento. Pode também ver os seus últimos consumos semanais através de um gráfico. Pode facilmente aceder ao ecrã de consulta dos seus consumos de forma mais detalhada, ao ecrã de registo de contadores (\autoref{fig:register_contracts}) e ao ecrã para efetuar uma leitura (\autoref{fig:send_leituras}).
+
+\newpage
+%\clearpage
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=5cm]{Imagens/Ecras/register_contracts.pdf}
+      \caption{Ecrã de Registo de Contratos}
+      \label{fig:register_contracts}
+\end{figure}
+
+Neste ecrã, é possível o utilizador adicionar contratos que ficarão associados à sua conta, inserindo os dados necessários relativos ao seu contrato. Pode associar aqui ainda os vários contadores que pertençam ao contrato.
+
+\newpage
+
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=5cm]{Imagens/Ecras/send_leituras.pdf}
+      \caption{Ecrã de Envio de Leituras}
+      \label{fig:send_leituras}
+\end{figure}
+
+Neste ecrã, o utilizador escolhendo o contrato e o contador pode tirar fotografia ao leitor do seu contador e após a imagem ser analisada é mostrado ao utilizador o valor para confirmar se é o valor correto a enviar. Caso por algum motivo não consiga com a opção do uso da câmara pode sempre inserir manualmente o valor da sua leitura.
+
+\newpage
+\section{Sistema de Base Dados}
+\label{sec:sistemaBaseDados}
+
+Uma das componentes deste sistema é um sistema base de dados, que irá conter as várias informações dos utilizadores deste sistema. De modo a facilitar a leitura apresenta-se na \autoref{fig:modelo_EA} o modelo relacional simplificado da nossa base de dados. É um modelo simplificado pois não se apresentam os atributos de cada entidade. Para mais detalhes encontra-se no \autoref{ch:modeloEAcompleto} o modelo completo.
+
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[width=11cm]{Imagens/Modelos/ER_simp.pdf}
+      \caption{Modelo Entidade Associação Simplificado da Base de Dados}
+      \label{fig:modelo_EA}
+\end{figure}
+
+A entidade \texttt{User} representa os utilizadores que estão registados no sistema \textit{WaterSpy}. Para cada utilizador serão guardadas as informações principais como o \textit{email}, \textit{firstName}, \textit{lastName}, \textit{password} e imagem de perfil (\textit{image}). A entidade \texttt{Role} armazena os dois cargos que os utilizadores podem ter, o \texttt{Consumer} e o \texttt{Admin} que fornecem permissões diferentes de utilização. A entidade \texttt{UserRole} faz a ligação entre as duas entidades anteriores.
+
+A entidade \texttt{Contract} armazena as informações sobre os contratos que o consumidor tem, neste caso o \texttt{contractNumber} e uma descrição para facilitar ao utilizador perceber de onde se trata o contracto. Esta entidade está relacionada com a entidade \texttt{Supplier} que são os fornecedores do serviço para aquele contrato. O contrato também tem relação com a entidade \texttt{Meter} que armazena os números dos contadores relacionados com aquele contrato, que por sua vez tem uma relação com a entidade \texttt{Consumption} que armazena os valores enviados dos consumos e a sua data de envio.
+
+Por fim, a entidade \texttt{Notification} armazena as informações sobre as notificações que são enviadas ao utilizador.
